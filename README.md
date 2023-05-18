@@ -4,8 +4,8 @@ Concepts
 ---------
 
 For this project, we expect you to look at these concepts:
--	Everything you need to know to start coding your own shell(https://intranet.alxswe.com/concepts/64)
--	Approaching a Project(https://intranet.alxswe.com/concepts/350)
+-	[Everything you need to know to start coding your own shell](https://intranet.alxswe.com/concepts/64)
+-	[Approaching a Project](https://intranet.alxswe.com/concepts/350)
 
 Background Context
 -------------------
@@ -200,14 +200,13 @@ Write a beautiful code that passes the Betty checks
 **Repo:**
 
 -   GitHub repository: `simple_shell`
------
 
 ### 1. Simple shell 0.1
 *mandatory*
 
 Write a UNIX command line interpreter.
 
-Usage: `simple_shell`
+-	Usage: `simple_shell`
 Your Shell should:
 
 -   Display a prompt and wait for the user to type a command. A command line always ends with a new line.
@@ -222,7 +221,7 @@ You don’t have to:
 
 -   use the `PATH`
 -   implement built-ins
--   handle special characters : `"`, `'`, ```, `\`, `*`, `&`, `#`
+-   handle special characters : `"`, `'`, `\``, `\`, `*`, `&`, `#`
 -   be able to move the cursor
 -   handle commands with arguments
 
@@ -253,3 +252,4 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat 
 **Repo:**
 
 -   GitHub repository: `simple_shell`
+
