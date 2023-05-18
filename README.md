@@ -207,6 +207,7 @@ Write a beautiful code that passes the Betty checks
 Write a UNIX command line interpreter.
 
 -	Usage: `simple_shell`
+
 Your Shell should:
 
 -   Display a prompt and wait for the user to type a command. A command line always ends with a new line.
@@ -221,7 +222,7 @@ You don’t have to:
 
 -   use the `PATH`
 -   implement built-ins
--   handle special characters : `"`, `'`, `\``, `\`, `*`, `&`, `#`
+-   handle special characters : `"`, `'`, ```, `\`, `*`, `&`, `#`
 -   be able to move the cursor
 -   handle commands with arguments
 
