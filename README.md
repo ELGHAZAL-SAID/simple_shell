@@ -254,3 +254,14 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat 
 
 -   GitHub repository: `simple_shell`
 
+### 2. Simple shell 0.2
+
+*mandatory*
+
+simple shell 0.2+
+
+-	Handle command lines with arguments
+
+**Repo**:
+
+-	GitHub repository: 'simple_shell'
