@@ -35,6 +35,7 @@ void rm_newline(char *cmd);
 void rm_comment(char *cmd);
 void _quit(char **token);
 void env_shell(char **token __attribute__((unused)));
+void clean_shell(void);
 
 
 
