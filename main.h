@@ -36,8 +36,9 @@ void rm_comment(char *cmd);
 void _quit(char **token);
 void env_shell(char **token __attribute__((unused)));
 void clean_shell(void);
-
-
+int parsing_cmd(char *cmd);
+void ready_cmd(char **buffer, int cmd_type);
+char *is_found(char *cmd);
 
 /*global variables*/
 extern char **environ;
