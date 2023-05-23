@@ -12,7 +12,7 @@ int st = 0;
  * return: 0.
  */
 
-int main()
+int main(void)
 {
 	char **buffer = 0;
 	size_t size = 0;
@@ -23,7 +23,7 @@ int main()
 		clean_shell();
 		display();
 		line = getline(&ln, &size, stdin);
-		if(line == -1)
+		if (line == -1)
 		{
 			free(ln), exit(st);
 		}
@@ -45,5 +45,5 @@ int main()
 		free(cmd);
 	}
 	free(ln);
-	return(st);
+	return (st);
 }

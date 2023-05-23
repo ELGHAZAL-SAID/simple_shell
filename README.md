@@ -229,7 +229,7 @@ You don’t have to:
 *`execve` will be the core part of your Shell, don’t forget to pass the environ to it…*
 
 ```
-julien@ubuntu:~/shell$ ./shell 
+julien@ubuntu:~/shell$ ./shell
 #cisfun$ ls
 ./shell: No such file or directory
 #cisfun$ /bin/ls
@@ -283,7 +283,7 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell
 :) ls
 barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell_0.3  stat    test_scripting.sh  wait.c
 env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell.c    stat.c  wait
-:) ls -l /tmp 
+:) ls -l /tmp
 total 20
 -rw------- 1 julien julien    0 Dec  5 12:09 config-err-aAMZrR
 drwx------ 3 root   root   4096 Dec  5 12:09 systemd-private-062a0eca7f2a44349733e78cb4abdff4-colord.service-V7DUzr
@@ -291,7 +291,7 @@ drwx------ 3 root   root   4096 Dec  5 12:09 systemd-private-062a0eca7f2a4434973
 drwx------ 3 root   root   4096 Dec  5 12:07 systemd-private-062a0eca7f2a44349733e78cb4abdff4-systemd-timesyncd.service-CdXUtH
 -rw-rw-r-- 1 julien julien    0 Dec  5 12:09 unity_support_test.0
 :) ^C
-julien@ubuntu:~/shell$ 
+julien@ubuntu:~/shell$
 ```
 
 **Repo:**
