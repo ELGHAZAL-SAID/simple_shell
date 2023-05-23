@@ -5,7 +5,7 @@
  *@token: token to execut
  *@cmd_type: type of the command
  *
- *Return: non	
+ *Return: non.
  */
 
 
@@ -32,7 +32,7 @@ void exec_cmd(char **token, int cmd_type)
 	if (cmd_type == INTERNAL_CMD)
 	{
 		func = func_geter(token[0]);
-		func(token):
+		func(token);
 	}
 	if (cmd_type == INV_CMD)
 	{

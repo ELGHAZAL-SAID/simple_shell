@@ -13,9 +13,8 @@ void (*func_geter(char *cmd)(char **)
 	int i;
 
 	get_func map[] = {
-			{"env", env_shell},
-			{"exit", _quit}
-			};
+		{"env", env_shell}, {"exit", _quit}
+	};
 
 	for (i = 0; i < 2; i++)
 	{

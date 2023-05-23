@@ -22,12 +22,12 @@ void _quit(char **token)
 	}
 	else if (num_token == 2)
 	{
-		arg = atoi(tokenized_command[1]);
+		arg = atoi(token[1]);
 		if (arg == -1)
 		{
 			print(shell, STDERR_FILENO);
 			print(": 1: exit: Illegal number: ", STDERR_FILENO);
-			print(tokenized_command[1], STDERR_FILENO);
+			print(token[1], STDERR_FILENO);
 			print("\n", STDERR_FILENO);
 			status = 2;
 		}

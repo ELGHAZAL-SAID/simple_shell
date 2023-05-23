@@ -17,7 +17,7 @@ char *is_found(char *cmd)
 		return (0);
 	cp_p = malloc(sizeof(cp_p) * (strlen(p) + 1));
 	strcpy(p, cp_p);
-	arr_p = strtok(cp_p, ":");
+	arr_p = _strtok(cp_p, ":");
 	while (arr_p != 0)
 	{
 		c2 = strcat(arr_p[i], "/");

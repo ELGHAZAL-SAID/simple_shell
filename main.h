@@ -39,6 +39,7 @@ void clean_shell(void);
 int parsing_cmd(char *cmd);
 void ready_cmd(char **buffer, int cmd_type);
 char *is_found(char *cmd);
+char **_strtok(char *str, char *delimiter);
 
 /*global variables*/
 extern char **environ;

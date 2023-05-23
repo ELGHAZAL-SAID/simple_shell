@@ -1,0 +1,28 @@
+#include "main.h"
+
+/**
+ * _strtok - make a string tokinized.
+ * @str: the string.
+ * @delimiter: delimiter to split the string.
+ *
+ * Return: all the tokens.
+ */
+
+char **_strtok(char *str, char *delimiter)
+{
+	int n_delimiter = 0;
+	char **p = 0, *token = 0, *d = 0;
+
+	token = strtok(str, delimiter, &d);
+	while (token != 0)
+	{
+		p = realloc(p, sizeof(*p) * n_delimiter, sizeof(*p) * (n_delimiter + 1));
+		p[n_delimiter] = token;
+		token = strtok(NULL, delimiter, &d);
+		n_delimiter++;
+	}
+	p = realloc(p, sizeof(*p) * n_delimiter, sizeof(*p) * (n_delimiter + 1));
+	p[n_delimiter] = 0;
+
+	return (p);
+}

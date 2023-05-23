@@ -13,7 +13,7 @@ void env_shell(char **token __attribute__((unused)))
 
 	while (environ[i] != 0)
 	{
-		printf("%s\n",environ[i]);
+		printf("%s\n", environ[i]);
 		printf("\n");
 		i++;
 	}

@@ -16,10 +16,10 @@ char *path_checker(char *cmd)
 		return (0);
 	path_copy = malloc(sizeof(*path_copy) * (stlen(path) + 1));
 	strcpy(path, path_copy);
-	path_list = strtok(path_copy, ":");
+	path_list = _strtok(path_copy, ":");
 	while (path_list[i] != 0)
 	{
-		tm2 = strcat(path_list[i],"/");
+		tm2 = strcat(path_list[i], "/");
 		tm = strcat(tm2, cmd);
 		if (access(tm, F_OK) == 0)
 		{

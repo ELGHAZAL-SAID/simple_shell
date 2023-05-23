@@ -20,7 +20,7 @@ void clean_shell(void)
 		{
 			rm_newline(ln);
 			rm_comment(ln);
-			cmd = strtok(ln, ";");
+			cmd = _strtok(ln, ";");
 			while (cmd[i] != 0)
 			{
 				buffer = _strtok(cmd[i], " ");

@@ -29,10 +29,10 @@ int main(void)
 		}
 		rm_newline(ln);
 		rm_comment(ls);
-		cmd = strtok(ln, ";");
+		cmd = _strtok(ln, ";");
 		while (cmd[i] != 0)
 		{
-			buffer = strtok(cmd[i], " ");
+			buffer = _strtok(cmd[i], " ");
 			if (buffer[0] == 0)
 			{
 				free(buffer);
