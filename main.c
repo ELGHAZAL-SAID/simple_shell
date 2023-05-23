@@ -1,22 +1,26 @@
 #include "main.h"
 
 
-char **cmd = 0;
-char *ln = 0;
-char *shell = 0;
+char **cmd = NULL;
+char *ln = NULL;
+char *shell = NULL;
 int st = 0;
 
 /**
  * main - shell programe.
- *
+ * @argc: number of arguments passed
+ * @argv: program arguments to be parsed
  * return: 0.
  */
 
-int main(void)
+int main(int argc __attribute__((unused)), char **argv)
 {
-	char **buffer = 0;
+	char **buffer = NULL;
 	size_t size = 0;
 	int i = 0, cmd_type = 0, line;
+
+	signal(SIGINT, ctrl_c_handler);
+	shell = argv[0];
 
 	while (1)
 	{
@@ -34,7 +38,7 @@ int main(void)
 		while (cmd[i] != 0)
 		{
 			buffer = _strtok(cmd[i], " ");
-			if (buffer[0] == 0)
+			if (buffer[0] == NULL)
 			{
 				free(buffer);
 				break;

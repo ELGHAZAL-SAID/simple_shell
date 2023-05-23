@@ -18,17 +18,17 @@ void display(void)
  * Return: 0.
  */
 
-void rm_newline(char *cmd)
+void rm_newline(char *cmds)
 {
 	int i = 0;
 
-	while (cmd[i] != 0)
+	while (cmds[i] != '\0')
 	{
-		if (cmd[i] == '\n')
+		if (cmds[i] == '\n')
 			break;
 		i++;
 	}
-	cmd[i] = 0;
+	cmds[i] = '\0';
 }
 
 /**
@@ -43,14 +43,14 @@ void rm_comment(char *cmd)
 	int i = 0;
 
 	if (cmd[i] == '#')
-		cmd[i] = 0;
-	while (cmd[i] != 0)
+		cmd[i] = '\0';
+	while (cmd[i] != '\0')
 	{
 		if (cmd[i] == '#' && cmd[i - 1] == ' ')
 			break;
 		i++;
 	}
-	cmd[i] = 0;
+	cmd[i] = '\0';
 }
 
 /**
@@ -62,7 +62,7 @@ void rm_comment(char *cmd)
  */
 char *_strtok_(char *string, char *delimiter, char **saved_ptr)
 {
-	char *fin;
+	char *fin = NULL;
 
 	if (string == NULL)
 		string = *saved_ptr;

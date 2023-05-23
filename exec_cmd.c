@@ -17,7 +17,7 @@ void exec_cmd(char **token, int cmd_type)
 	{
 		if (execve(token[0], token, NULL) == -1)
 		{
-			perror(getenv("PWD"));
+			perror(_getenv("PWD"));
 			exit(2);
 		}
 	}
@@ -25,7 +25,7 @@ void exec_cmd(char **token, int cmd_type)
 	{
 		if (execve(path_checker(token[0]), token, NULL) == -1)
 		{
-			perror(getenv("PWD"));
+			perror(_getenv("PWD"));
 			exit(2);
 		}
 	}
@@ -36,10 +36,7 @@ void exec_cmd(char **token, int cmd_type)
 	}
 	if (cmd_type == INV_CMD)
 	{
-		printf("%s\n", shell);
-		printf(":1:");
-		printf("%s\n", token[0]);
-		printf(": not found\n");
+		printf("%s :1: %s : not found\n", shell, token[0]);
 		st = 127;
 	}
 }

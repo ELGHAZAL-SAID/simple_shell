@@ -11,10 +11,10 @@
 char **_strtok(char *str, char *delimiter)
 {
 	int n_delimiter = 0;
-	char **p = 0, *token = 0, *d = 0;
+	char **p = NULL, *token = NULL, *d = NULL;
 
 	token = _strtok_(str, delimiter, &d);
-	while (token != 0)
+	while (token != NULL)
 	{
 		p = _realloc(p, sizeof(*p) * n_delimiter, sizeof(*p) * (n_delimiter + 1));
 		p[n_delimiter] = token;
@@ -22,7 +22,7 @@ char **_strtok(char *str, char *delimiter)
 		n_delimiter++;
 	}
 	p = _realloc(p, sizeof(*p) * n_delimiter, sizeof(*p) * (n_delimiter + 1));
-	p[n_delimiter] = 0;
+	p[n_delimiter] = NULL;
 
 	return (p);
 }
