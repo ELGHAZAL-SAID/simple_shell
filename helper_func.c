@@ -5,7 +5,7 @@
  *
  * Return: 0.
  */
-void display()
+void display(void)
 {
 	printf("#cisfun$ ");
 }
@@ -15,7 +15,7 @@ void display()
  *
  * Return: 0.
  */
-void print_err()
+void print_err(void)
 {
 	printf("./shell: No such file or directory");
 }

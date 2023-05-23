@@ -29,10 +29,14 @@ typedef struct func
 } get_func;
 
 /*prototype of the functions*/
-void display();
-void print_err();
+void display(void);
+void print_err(void);
 void rm_newline(char *cmd);
 void rm_comment(char *cmd);
+void _quit(char **token);
+void env_shell(char **token __attribute__((unused)));
+
+
 
 /*global variables*/
 extern char **environ;
@@ -40,5 +44,6 @@ extern char *ln;
 extern char *cmd;
 extern char *shell;
 extern int st;
+
 
 #endif
