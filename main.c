@@ -35,6 +35,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		rm_newline(ln);
 		rm_comment(ln);
 		cmd = _strtok(ln, ";");
+		i = 0;
 		while (cmd[i] != 0)
 		{
 			buffer = _strtok(cmd[i], " ");

@@ -8,7 +8,7 @@
 * Return: pointer to the chosen function
 */
 
-void (*func_geter(char *cmd))(char **)
+void (*func_geter(char *cmds))(char **)
 {
 	int i;
 
@@ -18,7 +18,7 @@ void (*func_geter(char *cmd))(char **)
 
 	for (i = 0; i < 2; i++)
 	{
-		if (strcmp(cmd, map[i].cmd) == 0)
+		if (strcmp(cmds, map[i].cmd) == 0)
 			return (map[i].func);
 	}
 	return (0);

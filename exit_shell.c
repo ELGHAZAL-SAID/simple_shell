@@ -8,10 +8,10 @@
 
 void _quit(char **token)
 {
-	int num_token;
+	int num_token = 0;
 	int arg;
 
-	for (num_token = 0; token[num_token] != NULL; num_token++)
+	for (; token[num_token] != NULL; num_token++)
 		;
 	if (num_token == 1)
 	{

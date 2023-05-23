@@ -9,7 +9,7 @@
 
 void clean_shell(void)
 {
-	char **buffer;
+	char **buffer = NULL;
 	int i = 0, cmd_type = 0, line;
 	size_t size = 0;
 
@@ -21,10 +21,11 @@ void clean_shell(void)
 			rm_newline(ln);
 			rm_comment(ln);
 			cmd = _strtok(ln, ";");
-			while (cmd[i] != 0)
+			i = 0;
+			while (cmd[i] != NULL)
 			{
 				buffer = _strtok(cmd[i], " ");
-				if (buffer[0] == 0)
+				if (buffer[0] == NULL)
 				{
 					free(buffer);
 					break;
