@@ -264,7 +264,7 @@ simple shell 0.2+
 
 **Repo**:
 
--	GitHub repository: 'simple_shell'
+-	GitHub repository: `simple_shell`
 
 ### 3. Simple shell 0.3
 
@@ -272,8 +272,8 @@ simple shell 0.2+
 
 simple shell 0.2+
 
--	Handle the 'PATH'
--	'fork' must not be called if the command doesn't exit
+-	Handle the `PATH`
+-	`fork` must not be called if the command doesn't exit
 
 ```
 julien@ubuntu:~/shell$ ./shell_0.3
@@ -296,4 +296,4 @@ julien@ubuntu:~/shell$
 
 **Repo:**
 
--	GitHub repository: 'simple_shell'
+-	GitHub repository: `simple_shell`
