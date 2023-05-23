@@ -13,8 +13,8 @@ void env_shell(char **token __attribute__((unused)))
 
 	while (environ[i] != 0)
 	{
-		print(environ[i], STDOUT_FILENO);
-		print("\n", STDOUT_FILENO);
+		printf("%s\n",environ[i]);
+		printf("\n");
 		i++;
 	}
 }

@@ -2,11 +2,11 @@
 #define MAIN_H
 
 #include <stdio.h>
-#include <stdib.h>
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <stdlib.h>
 
 /*constants macros*/
 #define EXTERN_CMD 1
@@ -25,7 +25,7 @@
 typedef struct func
 {
 	char *cmd;
-	void (*func)(char **cmd)
+	void (*func)(char **cmd);
 } get_func;
 
 /*prototype of the functions*/

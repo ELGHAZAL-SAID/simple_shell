@@ -15,7 +15,7 @@ void clean_shell(void)
 
 	if (!(isatty(STDIN_FILENO)))
 	{
-		line = getlin(&ln, &size, stdin);
+		line = getline(&ln, &size, stdin);
 		while (line != -1)
 		{
 			rm_newline(ln);
@@ -23,7 +23,7 @@ void clean_shell(void)
 			cmd = strtok(ln, ";");
 			while (cmd[i] != 0)
 			{
-				buffer = strtok(cmd[i], " ");
+				buffer = _strtok(cmd[i], " ");
 				if (buffer[0] == 0)
 				{
 					free(buffer);
