@@ -9,12 +9,12 @@
 
 char *path_checker(char *cmd)
 {
-	char **path_list = NULL, *tm, tm2, *path_copy, *path = getenv("PATH");
+	char **path_list = NULL, *tm, *tm2, *path_copy, *path = getenv("PATH");
 	int i = 0;
 
 	if (path == 0 || strlen(path) == 0)
 		return (0);
-	path_copy = malloc(sizeof(*path_copy) * (stlen(path) + 1));
+	path_copy = malloc(sizeof(*path_copy) * (strlen(path) + 1));
 	strcpy(path, path_copy);
 	path_list = _strtok(path_copy, ":");
 	while (path_list[i] != 0)

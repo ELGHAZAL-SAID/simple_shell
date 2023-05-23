@@ -29,7 +29,7 @@ void exec_cmd(char **token, int cmd_type)
 			exit(2);
 		}
 	}
-	if (cmd_type == INTERNAL_CMD)
+	if (cmd_type == INTERN_CMD)
 	{
 		func = func_geter(token[0]);
 		func(token);

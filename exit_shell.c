@@ -17,7 +17,7 @@ void _quit(char **token)
 	{
 		free(token);
 		free(ln);
-		free(com);
+		free(cmd);
 		exit(st);
 	}
 	else if (num_token == 2)
@@ -25,11 +25,8 @@ void _quit(char **token)
 		arg = atoi(token[1]);
 		if (arg == -1)
 		{
-			print(shell, STDERR_FILENO);
-			print(": 1: exit: Illegal number: ", STDERR_FILENO);
-			print(token[1], STDERR_FILENO);
-			print("\n", STDERR_FILENO);
-			status = 2;
+			printf("%s : 1: exit: Illegal number: %s\n",shell ,token[1]);;
+			st = 2;
 		}
 		else
 		{
@@ -40,5 +37,6 @@ void _quit(char **token)
 		}
 	}
 	else
-		print("$: exit doesn't take more than one argument\n", STDERR_FILENO);
+		printf("$: exit doesn't take more than one argument\n");
+
 }

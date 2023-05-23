@@ -40,4 +40,3 @@ void clean_shell(void)
 		exit(st);
 	}
 }
-

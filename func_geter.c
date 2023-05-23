@@ -8,7 +8,7 @@
 * Return: pointer to the chosen function
 */
 
-void (*func_geter(char *cmd)(char **)
+void (*func_geter(char *cmd))(char **)
 {
 	int i;
 

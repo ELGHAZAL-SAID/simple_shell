@@ -2,7 +2,7 @@
 
 
 char **cmd = 0;
-char **ln = 0;
+char *ln = 0;
 char *shell = 0;
 int st = 0;
 
@@ -25,10 +25,11 @@ int main(void)
 		line = getline(&ln, &size, stdin);
 		if (line == -1)
 		{
-			free(ln), exit(st);
+			free(ln);
+			exit(st);
 		}
 		rm_newline(ln);
-		rm_comment(ls);
+		rm_comment(ln);
 		cmd = _strtok(ln, ";");
 		while (cmd[i] != 0)
 		{
@@ -38,9 +39,10 @@ int main(void)
 				free(buffer);
 				break;
 			}
-			cmd_type = cmd_parsing(buffer[0]);
+			cmd_type = parsing_cmd(buffer[0]);
 			ready_cmd(buffer, cmd_type);
 			free(buffer);
+			i++;
 		}
 		free(cmd);
 	}

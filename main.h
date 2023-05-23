@@ -37,14 +37,19 @@ void _quit(char **token);
 void env_shell(char **token __attribute__((unused)));
 void clean_shell(void);
 int parsing_cmd(char *cmd);
+char *path_checker(char *cmd);
 void ready_cmd(char **buffer, int cmd_type);
+void exec_cmd(char **token, int cmd_type);
 char *is_found(char *cmd);
+void (*func_geter(char *cmd))(char **);
 char **_strtok(char *str, char *delimiter);
+void *_realloc(void *ptr, unsigned int old_s, unsigned int new_s);
+char *_strtok_(char *string, char *delimiter, char **saved_ptr);
 
 /*global variables*/
 extern char **environ;
 extern char *ln;
-extern char *cmd;
+extern char **cmd;
 extern char *shell;
 extern int st;
 
