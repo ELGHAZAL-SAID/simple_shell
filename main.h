@@ -1,41 +1,34 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/stat.h>
 #include <unistd.h>
-#include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
+#include <wait.h>
+#include <fcntl.h>
 #include <dirent.h>
 #include <signal.h>
 
-/*constants macros*/
-#define EXTERN_CMD 1
-#define INTERN_CMD 2
-#define PATH_CMD 3
-#define INV_CMD -1
-
-/*functions macros*/
-#define _min(a, b) (((a) < (b)) ? (a) : (b))
 
 /**
- * struct func - maping command name.
- * @cmd: the command.
- * @func: executes the command.
+ * struct link - linked list..
+ * @value: the Value.
+ * @next: point to the next..
  */
-typedef struct func
+typedef struct link
 {
-	char *cmd;
-	void (*func)(char **cmd);
-} get_func;
+	char *value;
+	struct link *next;
+} link_t;
 
 /*prototype of the functions*/
 
+
 void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
-void display(void);
 char *rm_space(char *str);
 void rm_newline(char *cmd);
 void rm_comment(char *cmd);
@@ -53,12 +46,6 @@ char **_strtok(char *str, char *delimiter);
 char *_strtok_(char *string, char *delimiter, char **saved_ptr);
 char *_getenv(char *name);
 
-/*global variables*/
-extern char **environ;
-extern char *ln;
-extern char **cmd;
-extern char *shell;
-extern int st;
 
-
+int terminal(char **envirment);
 #endif
