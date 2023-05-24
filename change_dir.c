@@ -51,7 +51,7 @@ int set_env(link_t **e, char *v_name, char *d)
 	str = strdup(v_name);
 	str = strcat(str, "=");
 	str = strcat(str, d);
-	index = find_env(*e, v_name);
+	index = is_found_env(*e, v_name);
 
 	handler = *e;
 	while (i < index)

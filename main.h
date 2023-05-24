@@ -26,22 +26,6 @@ typedef struct link
 } link_t;
 
 /*prototype of the functions*/
-
-
-void rm_newline(char *cmd);
-void rm_comment(char *cmd);
-int parsing_cmd(char *cmd);
-char *path_checker(char *cmd);
-extern void ready_cmd(char **buffer, int cmd_type);
-void exec_cmd(char **token, int cmd_type);
-char *is_found(char *cmd);
-void (*func_geter(char *cmd))(char **);
-void ctrl_c_handler(int signum);
-char **_strtok(char *str, char *delimiter);
-char *_strtok_(char *string, char *delimiter, char **saved_ptr);
-char *_getenv(char *name);
-
-
 int terminal(char **envirment);
 void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
 char *rm_space(char *str);
@@ -81,6 +65,6 @@ void ctrl_c(int n);
 void ctrl_D(int i, char *command, link_t *env);
 
 void exit_c(char **string, link_t *environ);
-int exe_ve(char **str, link_t *environ, int number)
+int exe_ve(char **str, link_t *environ, int number);
 
 #endif
