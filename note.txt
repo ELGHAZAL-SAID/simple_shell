@@ -57,5 +57,7 @@ _execve = exe_ve();
 c_strdup() = strdup_c();
 get_env() = env_getter();
 
-
 int_to_string() = digit_to_str();
+
+_setenv() = setenv_();
+_unsetenv()= unsetenv_();

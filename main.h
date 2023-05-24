@@ -72,4 +72,7 @@ char *env_getter(char *string, link_t *env);
 
 char *digit_to_str(int number);
 
+int setenv_(link_t **env, char **str);
+int unsetenv_(link_t **env, char **str);
+
 #endif
