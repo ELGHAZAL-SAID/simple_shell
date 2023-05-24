@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * builtin_func - handles builtin functions
+ * builtin_func - handle functions
+ * @token: the token.
  * @env: env variables
- * @number: take in nth user command typed to write error message
- * @cmd: command to free
- * Return: 1 if on builtin behavior, else 0
+ * @number: number.
+ * @cmd: cmd to free it.
+ * Return: 1 or 0.
  */
 int builtin_func(char **token, link_t *env, int number, char **cmd)
 {

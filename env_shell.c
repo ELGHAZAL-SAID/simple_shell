@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * env_linked - creates a linked list from enviroment variables
- * @env: enviroment variables
- * Return: linked list
+ * env_shell_linked - create a list from env var.
+ * @env: enviroment variables.
+ * Return: the list.
  */
 link_t *env_shell_linked(char **env)
 {
@@ -20,14 +20,15 @@ link_t *env_shell_linked(char **env)
 }
 
 /**
- * _env - prints env variables
+ * env_shell - write env var.
  * @cmd: command
  * @env: env variables
- * Return: 0 on success
+ * Return: always 0.
  */
 int env_shell(char **cmd, link_t *env)
 {
 	free_arr(cmd);
 	write_list(env);
 	return (0);
+
 }

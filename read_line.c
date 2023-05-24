@@ -1,43 +1,41 @@
 #include "main.h"
 
 /**
- * read_line - reads command into buffer
- * @str: the command.
- * Return: number of characters.
+ * read_line - read the command.
+ * @string: the string.
+ * Return: num of chars.
  */
-size_t read_line(char **str)
+size_t read_line(char **string)
 {
-	ssize_t x = 0, sz = 0, er = 0, er1 = 0, y = 0;
-	char buf[1024];
+	ssize_t x = 0, size = 0, error = 0, error1 = 0, y = 0;
+	char buffer[1024];
 
-	while (er1 == 0 && (x = read(STDIN_FILENO, buf, 1024 - 1)))
+	while (error1 == 0 && (x = read(STDIN_FILENO, buffer, 1024 - 1)))
 	{
 		if (x == -1)
 			return (-1);
 
-		buf[x] = '\0';
+		buffer[x] = '\0';
 
-		y = 0;
-		while (buf[y] != '\0')
+		for (y = 0; buffer[y] != '\0'; y++)
 		{
-			if (buf[y] == '\n')
-				er1 = 1;
-			y++;
+			if (buffer[y] == '\n')
+				error1 = 1;
 		}
 
-		if (er == 0)
+		if (error == 0)
 		{
 			x++;
-			*str = malloc(sizeof(char) * x);
-			*str = _strcpy(*str, buf);
-			sz = x;
-			er = 1;
+			*string = malloc(sizeof(char) * x);
+			*string = _strcpy(*string, buffer);
+			size = x;
+			error = 1;
 		}
 		else
 		{
-			sz += x;
-			*str = _strcat(*str, buf);
+			size += x;
+			*string = _strcat(*string, buffer);
 		}
 	}
-	return (sz);
+	return (size);
 }

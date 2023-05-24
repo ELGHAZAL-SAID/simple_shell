@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * numlen - counts number of 0s in a tens power number
+ * number_len - counts number.
  * @n: number
- * Return: returns count of digits
+ * Return: number of digits.
  */
 int number_len(int n)
 {
@@ -17,9 +17,9 @@ int number_len(int n)
 	return (cnt);
 }
 /**
- * int_to_string - turns an int into a string
+ * digit_to_str - int to string.
  * @number: int
- * Return: returns the int as a string. returns NULL if failed
+ * Return: the string.
  */
 
 char *digit_to_str(int number)
@@ -62,4 +62,5 @@ char *digit_to_str(int number)
 	}
 	res[s] = '\0';
 	return (res);
+
 }

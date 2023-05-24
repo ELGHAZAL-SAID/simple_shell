@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _which - fleshes out command by appending it to a matching PATH directory
- * @str: first command user typed into shell
- * @env: environmental variable
- * Return: a copy of fleshed out command
+ * _which_cmd - fleshes out command by appending it to a matching PATH.
+ * @str: command as string.
+ * @env: env var.
+ * Return: the string.
  */
 char *_which_cmd(char *str, link_t *env)
 {
@@ -34,4 +34,5 @@ char *_which_cmd(char *str, link_t *env)
 	}
 	free_arr(toks);
 	return (str);
+
 }

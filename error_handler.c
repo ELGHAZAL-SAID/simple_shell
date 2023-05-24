@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * not_found - write shell error
- * @str: user's typed command
- * @c_n: nth user's typed command
- * @env: bring in enviroment variables linked list to write shell name
+ * is_not_found - handle shell error.
+ * @str: the string.
+ * @c_n: number of the string command.
+ * @env: envirement.
+ * Return: nothing.
  */
 void is_not_found(char *str, int c_n, link_t *env)
 {
@@ -33,10 +34,11 @@ void is_not_found(char *str, int c_n, link_t *env)
 }
 
 /**
- * cant_cd_to - write error
- * @str: user's typed argument after the cmd cd
- * @c_n: nth user's typed command
- * @env: bring in enviroment variables linked list to write shell name
+ * cant_access_to_dir - handle error.
+ * @str: the string.
+ * @c_n: number of the string command.
+ * @env: envirement.
+ * Return: nothing.
  */
 void cant_access_to_dir(char *str, int c_n, link_t *env)
 {
@@ -65,10 +67,11 @@ void cant_access_to_dir(char *str, int c_n, link_t *env)
 }
 
 /**
- * illegal_number - write shell error
- * @str: typed argument after the exit
- * @c_n: nth typed command
- * @env: get enviroment variables to write shell name
+ * illegal_args_number - handle shell error.
+ * @str: the string.
+ * @c_n: number of the string command.
+ * @env: envirement.
+ * Return: nothing.
  */
 void illegal_args_number(char *str, int c_n, link_t *env)
 {

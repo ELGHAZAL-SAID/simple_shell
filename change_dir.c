@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * strcat_rmf - concatenate and ignoring the first character
- * @d: des string.
- * @s: src string.
- * Return: concatenated string.
+ * strcat_rmf - concatenate without the first char.
+ * @d: destination string.
+ * @s: source string.
+ * Return: the whole string.
  */
 char *strcat_rmf(char *d, char *s)
 {
@@ -36,11 +36,11 @@ char *strcat_rmf(char *d, char *s)
 }
 
 /**
- * set_env - concatenating string first before setting.
- * @e: environmental variable linked list.
- * @v_name: environmental variable name.
- * @d: directory path.
- * Return: 0 on success.
+ * set_env - concatenating string and set it.
+ * @e: var environ.
+ * @v_name: var environ name.
+ * @d: the path.
+ * Return: always 0.
  **/
 int set_env(link_t **e, char *v_name, char *d)
 {
@@ -66,9 +66,9 @@ int set_env(link_t **e, char *v_name, char *d)
 }
 
 /**
- * cd_home - change directory to home
- * @e: environment linked list to update PATH and OLDPWD
- * @cur:  current working directotry
+ * cd_home - go to home.
+ * @e: environment.
+ * @cur:  current dir.
  */
 void cd_home(link_t *e, char *cur)
 {
@@ -86,13 +86,14 @@ void cd_home(link_t *e, char *cur)
 	free(hm);
 }
 /**
- * exec_cd - executes the cd
- * @e:  environment linked list to update PATH and OLDPWD
- * @cur:  current working directotry
- * @dir:  directory path to change to
- * @str:  the 1st argument to write out error
- * @num:  the line number to write out error
- * Return: 0 if success 2 if fail
+ * exec_cd - exe the cd command.
+ * @e:  environment.
+ * @cur:  current dir
+ * @dir:  dir path
+ * @str:  string.
+ * @num:  0 or 2.
+ *
+ * Return: return.
  */
 int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 {
@@ -118,11 +119,11 @@ int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 }
 
 /**
- * change_dir - change directory
- * @string: user's typed in command
- * @enviro: enviroment list to retrieve HOME and OLDPWD paths
- * @num: nth user command, to be used at error message
- * Return: 0 if success 2 if failed
+ * change_dir - change dir.
+ * @string: the command as string.
+ * @enviro: enviroment.
+ * @num: nulber of the string written.
+ * Return: 0 or 2.
  */
 int change_dir(char **string, link_t *enviro, int num)
 {
@@ -160,4 +161,5 @@ int change_dir(char **string, link_t *enviro, int num)
 		cd_home(enviro, cur);
 	free_arr(string);
 	return (count);
+
 }

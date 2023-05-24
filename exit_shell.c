@@ -2,17 +2,11 @@
 
 /**
  * _quit - exits the shell
- * @token: command
- * Return: non
- */
-
-/**
- * __exit - frees user input and then exits with a value
- * @str: user's command into shell
- * @env:  environment variable to free at error
- * @number:  nth user command line input to print in error message
- * @cmd:  command to free
- * Return: 0 if success else 2
+ * @str: command.
+ * @env: envirement.
+ * @number: number.
+ * @cmd: the command.
+ * Return: nothing.
  */
 int _quit(char **str, link_t *env, int number, char **cmd)
 {

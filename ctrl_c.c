@@ -2,8 +2,8 @@
 
 
 /**
- * ctrl_c - ignore Ctrl-C input and prints prompt again
- * @n: takes in int from signal
+ * ctrl_c - don't care about the ctrl+c.
+ * @n: the int.
  */
 void ctrl_c(int n)
 {
@@ -13,10 +13,10 @@ void ctrl_c(int n)
 
 
 /**
- * ctrl_D - exits program if Ctrl-D is input
- * @i: characters read via get_line
- * @command: user's typed in command
- * @env: enviroment variable linked list
+ * ctrl_D - exit the programme whene ctrl+d is entred.
+ * @i: read char.
+ * @command: command as string.
+ * @env: enviroment.
  */
 void ctrl_D(int i, char *command, link_t *env)
 {
@@ -28,4 +28,5 @@ void ctrl_D(int i, char *command, link_t *env)
 			write(STDOUT_FILENO, "\n", 1);
 		exit(0);
 	}
+
 }

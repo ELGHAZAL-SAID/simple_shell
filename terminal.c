@@ -2,9 +2,9 @@
 
 
 /**
- * terminal - executes user's commands.
- * @env: envrionment variables
- * Return: 0 on success
+ * terminal - the whole main function.
+ * @en: env var.
+ * Return: always 0.
  */
 int terminal(char **en)
 {
@@ -14,8 +14,7 @@ int terminal(char **en)
 	char *command, *n_command, **token;
 
 	env = env_shell_linked(en);
-	do
-	{
+	do {
 		cdn++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);

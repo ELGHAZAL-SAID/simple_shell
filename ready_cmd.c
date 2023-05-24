@@ -2,8 +2,8 @@
 
 
 /**
- * c_exit - frees list before exit.
- * @string: command as string.
+ * exit_c - free the list.
+ * @string: string.
  * @environ: env.
  */
 void exit_c(char **string, link_t *environ)
@@ -15,7 +15,7 @@ void exit_c(char **string, link_t *environ)
 
 /**
  * exe_ve - execute command.
- * @str: ccommand as string
+ * @str: command as string
  * @environ: environment variable
  * @number: num error
  * Return: 0 always.
@@ -60,4 +60,5 @@ int exe_ve(char **str, link_t *environ, int number)
 		}
 	}
 	return (0);
+
 }

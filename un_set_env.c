@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * find_env - find given environment variable in linked list
- * @env: environment variable linked list
- * @str: variable name
- * Return: idx of node in linked list
+ * is_found_env - find an env.
+ * @env: env.
+ * @str: the string.
+ * Return: index.
  */
 
 int is_found_env(link_t *env, char *str)
@@ -28,10 +28,10 @@ int is_found_env(link_t *env, char *str)
 
 
 /**
- * unsetenv_ - remove node in environment linked list
- * @env: linked list
- * @str: user's typed in command
- * Return: 0 on success
+ * unsetenv_ - remove token in linked list
+ * @env: linked list env.
+ * @str: command as string.
+ * Return: always 0.
  */
 int unsetenv_(link_t **env, char **str)
 {
@@ -60,10 +60,10 @@ int unsetenv_(link_t **env, char **str)
 }
 
 /**
- * setenv_ - create or modify existing environment variable in linked list
- * @env: linked list
- * @str: user's typed in command
- * Return: 0 on success else 1
+ * setenv_ - create an var in list or lodify it.
+ * @env: env list.
+ * @str: command as string.
+ * Return: 0 or 1.
  */
 int setenv_(link_t **env, char **str)
 {
@@ -99,4 +99,6 @@ int setenv_(link_t **env, char **str)
 	free(cat);
 	free_arr(str);
 	return (0);
+
 }
+

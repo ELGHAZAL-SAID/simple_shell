@@ -2,10 +2,10 @@
 
 
 /**
- * c_t_size - returns number of delim
- * @str: user's command typed into shell
- * @delm: delimeter ;
- * Return: number of tokens
+ * count_delimiters - returns number of delim
+ * @str: string as command.
+ * @delimiter: delimeter.
+ * Return: number of nodes
  */
 int count_delimiters(char *str, char delimiter)
 {
@@ -24,10 +24,10 @@ int count_delimiters(char *str, char delimiter)
 
 
 /**
- * c_str_tok - tokenizes a string even the continuous delim with empty string
- * @str: user's command typed into shell
+ * tokenize_string - tokenize a string.
+ * @str: string as command.
  * @delimiter: delimeter
- * Return: an array of tokens
+ * Return: array's nodes.
  */
 char **tokenize_string(char *str, char *delimiter)
 {
@@ -61,4 +61,5 @@ char **tokenize_string(char *str, char *delimiter)
 	}
 	toks[p] = NULL;
 	return (toks);
+
 }

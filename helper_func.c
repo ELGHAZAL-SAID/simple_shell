@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ignore_space - return string without spaces in front
+ * rm_space - return string without spaces in front
  * @str: string
  * Return: new string
  */
@@ -15,7 +15,7 @@ char *rm_space(char *str)
 
 /**
  * rm_newline - remove a new line from a commande.
- * @cmd: the commande..
+ * @cmds: the commande..
  *
  * Return: 0.
  */
@@ -35,12 +35,12 @@ void rm_newline(char *cmds)
 
 
 /**
- * _realloc - reallocates a memory block
- * @ptr: pointer already allocated with a call to malloc
- * @oldSize: size of pointer
- * @newSize: new size of memory to be allocated
+ * _realloc - ellocate some memory.
+ * @ptr: memory already allocated.
+ * @oldSize: the old size.
+ * @newSize: the new size.
  *
- * Return: pointer to the new allocated memoty
+ * Return: the new memory allocated.
  */
 
 void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize)
@@ -75,4 +75,5 @@ void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize)
 	free(ptr);
 
 	return (pointer);
+
 }

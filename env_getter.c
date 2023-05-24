@@ -55,4 +55,5 @@ char *env_getter(char *string, link_t *env)
 		num++;
 	num++;
 	return (strdup_c(env->value, num));
+
 }
