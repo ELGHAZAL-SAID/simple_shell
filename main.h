@@ -67,4 +67,7 @@ void ctrl_D(int i, char *command, link_t *env);
 void exit_c(char **string, link_t *environ);
 int exe_ve(char **str, link_t *environ, int number);
 
+char *strdup_c(char *string, int num);
+char *env_getter(char *string, link_t *env);
+
 #endif
