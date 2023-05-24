@@ -33,8 +33,10 @@ typedef struct func
 } get_func;
 
 /*prototype of the functions*/
+
+void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
 void display(void);
-void print_err(void);
+char *rm_space(char *str);
 void rm_newline(char *cmd);
 void rm_comment(char *cmd);
 void _quit(char **token);
@@ -48,7 +50,6 @@ char *is_found(char *cmd);
 void (*func_geter(char *cmd))(char **);
 void ctrl_c_handler(int signum);
 char **_strtok(char *str, char *delimiter);
-void *_realloc(void *ptr, unsigned int old_s, unsigned int new_s);
 char *_strtok_(char *string, char *delimiter, char **saved_ptr);
 char *_getenv(char *name);
 

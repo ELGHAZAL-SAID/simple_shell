@@ -1,13 +1,15 @@
 #include "main.h"
 
 /**
- * display - display prompt message.
- *
- * Return: 0.
+ * ignore_space - return string without spaces in front
+ * @str: string
+ * Return: new string
  */
-void display(void)
+char *rm_space(char *str)
 {
-	printf("#cisfun$ ");
+	while (*str == ' ')
+		str++;
+	return (str);
 }
 
 
@@ -95,40 +97,42 @@ char *_strtok_(char *string, char *delimiter, char **saved_ptr)
 /**
  * _realloc - reallocates a memory block
  * @ptr: pointer already allocated with a call to malloc
- * @old_s: size of pointer
- * @new_s: new size of memory to be allocated
+ * @oldSize: size of pointer
+ * @newSize: new size of memory to be allocated
  *
  * Return: pointer to the new allocated memoty
  */
-void *_realloc(void *ptr, unsigned int old_s, unsigned int new_s)
+
+void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize)
 {
-	void *tm_block;
+	void *pointer;
 	unsigned int i;
 
-	if (ptr == NULL)
-	{
-		tm_block = malloc(new_s);
-		return (tm_block);
-	}
-	else if (new_s == old_s)
-		return (ptr);
-	else if (new_s == 0 && ptr != NULL)
+	if (newSize == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
-	else
-	{
-		tm_block = malloc(new_s);
-		if (tm_block != NULL)
-		{
-			for (i = 0; i < _min(old_s, new_s); i++)
-				*((char *)tm_block + i) = *((char *)ptr + i);
-			free(ptr);
-			return (tm_block);
-		}
-		else
-			return (NULL);
 
+	if (newSize == oldSize)
+		return (ptr);
+
+	if (ptr == NULL)
+	{
+		pointer = malloc(newSize);
+		if (pointer == NULL)
+			return (NULL);
+		else
+			return (pointer);
 	}
+
+	pointer = malloc(newSize);
+	if (pointer == NULL)
+		return (NULL);
+
+	for (i = 0; i < oldSize && i < newSize; i++)
+		*((char *)pointer + i) = *((char *)ptr + i);
+	free(ptr);
+
+	return (pointer);
 }
