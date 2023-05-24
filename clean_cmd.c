@@ -50,7 +50,7 @@ void clean_cmd(link_t *env)
 		xt = _execve(token, env, cdn);
 		q++;
 	}
-	free_double_ptr(n_line);
+	free_arr(n_line);
 	free_linked_list(env);
 	exit(xt);
 }
