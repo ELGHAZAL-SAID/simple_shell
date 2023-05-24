@@ -55,4 +55,8 @@ int token_size(char *str, char delimiter);
 int token_len(char *str, int index, char delimiter);
 int count_delimiters(char *str, char delimiter);
 char **tokenize_string(char *str, char *delimiter);
+int builtin_func(char **token, link_t *env, int number, char **cmd);
+int env_shell(char **cmd, link_t *env);
+link_t *env_shell_linked(char **env);
+int _quit(char **str, link_t *env, int number, char **cmd);
 #endif

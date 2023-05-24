@@ -1,36 +1,38 @@
 #include "main.h"
 
 /**
- * parsing_cmd - know the commande type.
- * @cmd: the commande.
- *
- * Return: type of the commande.
+ * built_in - handles builtin functions
+ * @env: env variables
+ * @number: take in nth user command typed to write error message
+ * @cmd: command to free
+ * Return: 1 if on builtin behavior, else 0
  */
-
-int parsing_cmd(char *cmd)
+int builtin_func(char **token, link_t *env, int number, char **cmd)
 {
 	int i = 0;
-	char *cmd_inter[] = {"env", "exit", NULL};
-	char *p = NULL;
 
-	while (cmd[i] != '\0')
+	if (strcmp(token[0], "exit") == 0)
 	{
-		if (cmd[i] == '/')
-			return (EXTERN_CMD);
-		i++;
+		i = _quit(token, env, number, cmd);
 	}
-	i = 0;
-	while (cmd_inter[i] != NULL)
+	else if (strcmp(token[0], "env") == 0)
 	{
-		if (strcmp(cmd, cmd_inter[i]) == 0)
-			return (INTERN_CMD);
-		i++;
+		env_shell(token, env);
+		i = 1;
 	}
-	p = path_checker(cmd);
-	if (p != NULL)
+	else if (strcmp(token[0], "cd") == 0)
 	{
-		free(p);
-		return (PATH_CMD);
+		i = _cd(token, env, number);
 	}
-	return (INV_CMD);
+	else if (strcmp(token[0], "setenv") == 0)
+	{
+		setenv(&env, token);
+		i = 1;
+	}
+	else if (strcmp(token[0], "unsetenv") == 0)
+	{
+		unsetenv(&env, token);
+		i = 1;
+	}
+	return (i);
 }

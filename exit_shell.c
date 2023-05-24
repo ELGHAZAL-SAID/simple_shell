@@ -6,37 +6,31 @@
  * Return: non
  */
 
-void _quit(char **token)
+/**
+ * __exit - frees user input and then exits with a value
+ * @str: user's command into shell
+ * @env:  environment variable to free at error
+ * @number:  nth user command line input to print in error message
+ * @cmd:  command to free
+ * Return: 0 if success else 2
+ */
+int _quit(char **str, link_t *env, int number, char **cmd)
 {
-	int num_token = 0;
-	int arg;
+	int ls = 0;
 
-	for (; token[num_token] != NULL; num_token++)
-		;
-	if (num_token == 1)
+	if (str[1] != NULL)
+		ls = atoi(str[1]);
+
+	if (ls == -1)
 	{
-		free(token);
-		free(ln);
-		free(cmd);
-		exit(st);
+		illegal_number(str[1], number, env);
+		free_double_ptr(str);
+		return (2);
 	}
-	else if (num_token == 2)
-	{
-		arg = atoi(token[1]);
-		if (arg == -1)
-		{
-			printf("%s : 1: exit: Illegal number: %s\n", shell, token[1]);;
-			st = 2;
-		}
-		else
-		{
-			free(ln);
-			free(token);
-			free(cmd);
-			exit(arg);
-		}
-	}
-	else
-		printf("$: exit doesn't take more than one argument\n");
+	free_double_ptr(str);
+	free_linked_list(env);
+	if (cmd != NULL)
+		free_double_ptr(cmd);
+	exit(ls);
 
 }
