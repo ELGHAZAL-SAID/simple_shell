@@ -74,7 +74,7 @@ void cd_home(link_t *e, char *cur)
 {
 	char *hm = NULL;
 
-	hm = get_env("HOME", e);
+	hm = env_getter("HOME", e);
 	set_env(&e, "OLDPWD", cur);
 	free(cur);
 	if (access(hm, F_OK) == 0)
@@ -110,7 +110,7 @@ int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 	}
 	else
 	{
-		cant_cd_to(str, num, e);
+		cant_access_to_dir(str, num, e);
 		free(cur);
 		x = 2;
 	}
@@ -134,13 +134,13 @@ int change_dir(char **string, link_t *enviro, int num)
 	{
 		if (string[1][0] == '~')
 		{
-			dir = get_env("HOME", enviro);
+			dir = env_getter("HOME", enviro);
 			dir = strcat_rmf(dir, string[1]);
 		}
 		else if (string[1][0] == '-')
 		{
 			if (string[1][1] == '\0')
-				dir = get_env("OLDPWD", enviro);
+				dir = env_getter("OLDPWD", enviro);
 		}
 		else
 		{

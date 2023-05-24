@@ -13,7 +13,7 @@ link_t *env_shell_linked(char **env)
 	head = NULL;
 	while (env[x] != NULL)
 	{
-		add_end_node(&head, env[x]);
+		add_node_end(&head, env[x]);
 		x++;
 	}
 	return (head);
@@ -28,6 +28,6 @@ link_t *env_shell_linked(char **env)
 int env_shell(char **cmd, link_t *env)
 {
 	free_arr(cmd);
-	print_list(env);
+	write_list(env);
 	return (0);
 }

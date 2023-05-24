@@ -58,3 +58,4 @@ c_strdup() = strdup_c();
 get_env() = env_getter();
 
 
+int_to_string() = digit_to_str();

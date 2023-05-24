@@ -26,7 +26,7 @@ int builtin_func(char **token, link_t *env, int number, char **cmd)
 	}
 	else if (strcmp(token[0], "setenv") == 0)
 	{
-		setenv(&env, token);
+		setenv_(&env, token);
 		i = 1;
 	}
 	else if (strcmp(token[0], "unsetenv") == 0)

@@ -42,7 +42,7 @@ link_t *env_shell_linked(char **env);
 int _quit(char **str, link_t *env, int number, char **cmd);
 void illegal_args_number(char *str, int c_n, link_t *env);
 void is_not_found(char *str, int c_n, link_t *env);
-void cant_eccess_to_dir(char *str, int c_n, link_t *env);
+void cant_access_to_dir(char *str, int c_n, link_t *env);
 
 int change_dir(char **string, link_t *enviro, int num);
 int exec_cd(link_t *e, char *cur, char *dir, char *str, int num);
@@ -69,5 +69,7 @@ int exe_ve(char **str, link_t *environ, int number);
 
 char *strdup_c(char *string, int num);
 char *env_getter(char *string, link_t *env);
+
+char *digit_to_str(int number);
 
 #endif

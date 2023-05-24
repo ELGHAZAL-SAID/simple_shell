@@ -24,13 +24,13 @@ int _quit(char **str, link_t *env, int number, char **cmd)
 	if (ls == -1)
 	{
 		illegal_args_number(str[1], number, env);
-		free_double_ptr(str);
+		free_arr(str);
 		return (2);
 	}
-	free_double_ptr(str);
-	free_linked_list(env);
+	free_arr(str);
+	free_list(env);
 	if (cmd != NULL)
-		free_double_ptr(cmd);
+		free_arr(cmd);
 	exit(ls);
 
 }

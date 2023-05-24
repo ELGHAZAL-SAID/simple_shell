@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * strdup_c - string duplication without first bytes

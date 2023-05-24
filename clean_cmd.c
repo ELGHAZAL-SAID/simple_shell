@@ -22,7 +22,7 @@ void clean_cmd(link_t *env)
 	int cdn = 0, xt = 0;
 	char *command = NULL, *n_command = NULL, **n_line, **token;
 
-	p = get_line(&command);
+	p = read_line(&command);
 	if (p == 0)
 	{
 		free(command);
@@ -47,10 +47,10 @@ void clean_cmd(link_t *env)
 			q++;
 			continue;
 		}
-		xt = _execve(token, env, cdn);
+		xt = exe_ve(token, env, cdn);
 		q++;
 	}
 	free_arr(n_line);
-	free_linked_list(env);
+	free_list(env);
 	exit(xt);
 }

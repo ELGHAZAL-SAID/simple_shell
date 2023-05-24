@@ -11,13 +11,13 @@ void is_not_found(char *str, int c_n, link_t *env)
 	int cnt = 0;
 	char *shell, *num;
 
-	shell = get_env("_", env);
+	shell = env_getter("_", env);
 	while (shell[cnt] != '\0')
 		cnt++;
 	write(STDOUT_FILENO, shell, cnt);
 	free(shell);
 	write(STDOUT_FILENO, ": ", 2);
-	num = int_to_string(c_n);
+	num = digit_to_str(c_n);
 	cnt = 0;
 	while (num[cnt] != '\0')
 		cnt++;
@@ -38,18 +38,18 @@ void is_not_found(char *str, int c_n, link_t *env)
  * @c_n: nth user's typed command
  * @env: bring in enviroment variables linked list to write shell name
  */
-void cant_eccess_to_dir(char *str, int c_n, link_t *env)
+void cant_access_to_dir(char *str, int c_n, link_t *env)
 {
 	int cnt = 0;
 	char *shell, *num;
 
-	shell = get_env("_", env);
+	shell = env_getter("_", env);
 	while (shell[cnt] != '\0')
 		cnt++;
 	write(STDOUT_FILENO, shell, cnt);
 	free(shell);
 	write(STDOUT_FILENO, ": ", 2);
-	num = int_to_string(c_n);
+	num = digit_to_str(c_n);
 	cnt = 0;
 	while (num[cnt] != '\0')
 		cnt++;
@@ -75,13 +75,13 @@ void illegal_args_number(char *str, int c_n, link_t *env)
 	int cnt = 0;
 	char *shell = NULL, *num = NULL;
 
-	shell = get_env("_", env);
+	shell = env_getter("_", env);
 	while (shell[cnt] != '\0')
 		cnt++;
 	write(STDOUT_FILENO, shell, cnt);
 	free(shell);
 	write(STDOUT_FILENO, ": ", 2);
-	num = int_to_string(c_n);
+	num = digit_to_str(c_n);
 	cnt = 0;
 	while (num[cnt] != '\0')
 		cnt++;
