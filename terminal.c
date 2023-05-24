@@ -3,49 +3,47 @@
 
 /**
  * terminal - executes user's commands.
- * @envirment: envrionment variables
+ * @env: envrionment variables
  * Return: 0 on success
  */
-int terminal(char **envirment)
+int terminal(char **en)
 {
-	link_t *e;
-	size_t x = 0;
-	size_t y = 0;
-	int i = 0;
-	int str = 0;
-	char *cmd, *n_cmd, **tk;
+	link_t *env;
+	size_t p = 0, q = 0;
+	int cdn = 0, xt = 0;
+	char *command, *n_command, **token;
 
-	e = env_shell_linked(envirment);
+	env = env_shell_linked(en);
 	do {
-		i++;
+		cdn++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);
 		else
-			clean_cmd(e);
+			clean_cmd(env);
 		signal(SIGINT, ctrl_c);
-		cmd = NULL;
-		x = 0;
-		x = read_line(&cmd);
-		ctrl_D(x, cmd, e);
-		n_cmd = cmd;
-		cmd = rm_space(cmd);
-		y = 0;
-		while (cmd[y] != '\n')
-			y++;
-		cmd[y] = '\0';
-		if (cmd[0] == '\0')
+		command = NULL;
+		p = 0;
+		p = read_line(&command);
+		ctrl_D(p, command, env);
+		n_command = command;
+		command = rm_space(command);
+		q = 0;
+		while (command[q] != '\n')
+			q++;
+		command[q] = '\0';
+		if (command[0] == '\0')
 		{
-			free(n_cmd);
+			free(n_command);
 			continue;
 		}
-		tk = NULL;
-		tk = _strtok(cmd, " ");
-		if (n_cmd != NULL)
-			free(n_cmd);
-		str = builtin_func(tk, e, i, NULL);
-		if (str)
+		token = NULL;
+		token = _strtok(command, " ");
+		if (n_command != NULL)
+			free(n_command);
+		xt = builtin_func(token, env, cdn, NULL);
+		if (xt)
 			continue;
-		str = _execve(tk, e, i);
+		xt = exe_ve(token, env, cdn);
 	} while (1);
-	return (str);
+	return (xt);
 }

@@ -1,71 +1,64 @@
 #include "main.h"
+
+
 /**
- * count_delimiters - returns the number of delimiters in a string
- * @str: string to count delimiters from
- * @delimiter: delimiter character
- * Return: number of delimiters
+ * c_t_size - returns number of delim
+ * @str: user's command typed into shell
+ * @delm: delimeter ;
+ * Return: number of tokens
  */
 int count_delimiters(char *str, char delimiter)
 {
-	int count = 0;
+	int x = 0, dlm = 0;
 
-	while (*str)
+	while (str[x] != '\0')
 	{
-		if (*str == delimiter)
-			count++;
-		str++;
+		if (str[x] == delimiter)
+		{
+			dlm++;
+		}
+		x++;
 	}
-
-	return count;
+	return (dlm);
 }
 
+
 /**
- * tokenize_string - tokenizes a string, even consecutive delimiters with empty strings
- * @str: string to tokenize
- * @delimiter: delimiter string
- * Return: array of tokens
+ * c_str_tok - tokenizes a string even the continuous delim with empty string
+ * @str: user's command typed into shell
+ * @delimiter: delimeter
+ * Return: an array of tokens
  */
 char **tokenize_string(char *str, char *delimiter)
 {
-	int buffer_size = 0, token_count = 0, str_length = 0;
-	char **tokens = NULL;
-	char delimiter_char = delimiter[0];
+	int bs = 0, p = 0, q = 0, r = 0, s = 0, t = 0;
+	char **toks = NULL, d_ch;
 
-	buffer_size = count_delimiters(str, delimiter_char);
-	tokens = malloc(sizeof(char *) * (buffer_size + 2));
+	d_ch = delimiter[0];
+	bs = count_delimiters(str, d_ch);
+	toks = malloc(sizeof(char *) * (bs + 2));
+	if (toks == NULL)
+		return (NULL);
 
-	if (tokens == NULL)
-		return NULL;
-
-	str_length = strlen(str);
-
-	int index = 0, token_index = 0, token_length = 0;
-
-	while (index < str_length)
+	while (str[t] != '\0')
+		t++;
+	while (q < t)
 	{
-		token_length = token_strlen(str, index, delimiter_char);
-		tokens[token_index] = malloc(sizeof(char) * (token_length + 1));
-
-		if (tokens[token_index] == NULL)
+		s = token_len(str, q, d_ch);
+		toks[p] = malloc(sizeof(char) * (s + 1));
+		if (toks[p] == NULL)
+			return (NULL);
+		r = 0;
+		while ((str[q] != d_ch) && (str[q] != '\0'))
 		{
-			free_tokens(tokens, token_index);
-			return NULL;
+			toks[p][r] = str[q];
+			r++;
+			q++;
 		}
-
-		int char_index = 0;
-
-		while ((str[index] != delimiter_char) && (str[index] != '\0'))
-		{
-			tokens[token_index][char_index] = str[index];
-			char_index++;
-			index++;
-		}
-
-		tokens[token_index][char_index] = '\0';
-		token_index++;
-		index++;
+		toks[p][r] = '\0';
+		p++;
+		q++;
 	}
-
-	tokens[token_index] = NULL;
-	return tokens;
+	toks[p] = NULL;
+	return (toks);
 }

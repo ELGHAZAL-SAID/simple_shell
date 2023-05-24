@@ -47,13 +47,13 @@ int unsetenv_(link_t **env, char **str)
 	free_arr(str);
 	if (idx == -1)
 	{
-		write(STDOUT_FILENO, "Not found\n", 12);
+		write(STDOUT_FILENO, "Not found\n", 11);
 		return (-1);
 	}
 	y = rm_node_int_at_index(env, idx);
 	if (y == -1)
 	{
-		write(STDOUT_FILENO, "Not found\n", 12);
+		write(STDOUT_FILENO, "Not found\n", 11);
 		return (-1);
 	}
 	return (0);

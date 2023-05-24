@@ -26,7 +26,7 @@ typedef struct link
 } link_t;
 
 /*prototype of the functions*/
-int terminal(char **envirment);
+int terminal(char **en);
 void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
 char *rm_space(char *str);
 size_t read_line(char **str);
@@ -74,5 +74,8 @@ char *digit_to_str(int number);
 
 int setenv_(link_t **env, char **str);
 int unsetenv_(link_t **env, char **str);
+char *_which_cmd(char *str, link_t *env);
+void clean_cmd(link_t *env);
+
 
 #endif
