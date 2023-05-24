@@ -76,7 +76,7 @@ link_t *add_node_end(link_t **head, char *str)
  * @index: input index
  * Return: 1 if success, else -1
  */
-int rn_node_int_at_index(link_t **head, int index)
+int rm_node_int_at_index(link_t **head, int index)
 {
 	link_t *n_head;
 	link_t *holder;

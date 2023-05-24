@@ -69,12 +69,14 @@ char *strcat_rmf(char *d, char *s);
 void free_arr(char **string);
 
 void free_list(link_t *list);
-int rn_node_int_at_index(link_t **head, int index);
+int rm_node_int_at_index(link_t **head, int index);
 size_t write_list(link_t *h);
 link_t *add_node_end(link_t **head, char *str);
 
 link_t *env_list(char **environ);
 int print_env(char **string, link_t *environ);
 
+void ctrl_c(int n);
+void ctrl_D(int i, char *command, link_t *env);
 
 #endif

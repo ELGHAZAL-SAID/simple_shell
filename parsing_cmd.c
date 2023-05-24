@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * built_in - handles builtin functions
+ * builtin_func - handles builtin functions
  * @env: env variables
  * @number: take in nth user command typed to write error message
  * @cmd: command to free
@@ -22,7 +22,7 @@ int builtin_func(char **token, link_t *env, int number, char **cmd)
 	}
 	else if (strcmp(token[0], "cd") == 0)
 	{
-		i = _cd(token, env, number);
+		i = change_dir(token, env, number);
 	}
 	else if (strcmp(token[0], "setenv") == 0)
 	{

@@ -11,8 +11,10 @@ print_error.c = error_handler.c
 non_interactive.c = clean_cmd.c
 free_double_ptr.c = free_arr.c
 linked_list.c = bondagani.c
-env_linked_list.c = env_list.c
+_execuve.c = ready_cmd.c
+
 -------------------------
+non_interactive() = clean_cmd();
 prompt() = terminal()
 ignore_space() = rm_space()
 _realoc() = _realoc():
@@ -39,7 +41,6 @@ cd_only = cd_home();
 free_double_ptr() = free_arr();
 print_list() = write_list();
 add_end_node() = add_node_end();
-delete_nodeint_at_index= rn_node_int_at_index;
+delete_nodeint_at_index= rm_node_int_at_index;
 free_linked_list() = free_list();
-env_linked_list() = env_list();
-_env() = print_env();
+
