@@ -80,4 +80,7 @@ int is_found_env(link_t *env, char *str);
 void ctrl_c(int n);
 void ctrl_D(int i, char *command, link_t *env);
 
+void exit_c(char **string, link_t *environ);
+int exe_ve(char **str, link_t *environ, int number)
+
 #endif
