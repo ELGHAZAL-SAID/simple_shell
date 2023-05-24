@@ -28,8 +28,6 @@ typedef struct link
 /*prototype of the functions*/
 
 
-void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
-char *rm_space(char *str);
 void rm_newline(char *cmd);
 void rm_comment(char *cmd);
 void _quit(char **token);
@@ -48,4 +46,7 @@ char *_getenv(char *name);
 
 
 int terminal(char **envirment);
+void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
+char *rm_space(char *str);
+size_t read_line(char **str);
 #endif
