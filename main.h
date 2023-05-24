@@ -152,14 +152,14 @@ char *rp_inp(r_var **head, char *input, char *new_input, int nlen);
 char *repeat_var(char *input, data_shell *datash);
 
 /* get_line.c */
-void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);
-ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
+void ln_br(char **lineptr, size_t *n, char *buffer, size_t j);
+ssize_t ln_getter(char **lineptr, size_t *n, FILE *stream);
 
 /* exec_line */
-int exec_line(data_shell *datash);
+int ln_exe(data_shell *datash);
 
 /* cmd_exec.c */
-int is_cdir(char *path, int *i);
+int _cdir_(char *path, int *i);
 char *_which(char *cmd, char **_environ);
 int is_executable(data_shell *datash);
 int check_error_cmd(char *dir, data_shell *datash);

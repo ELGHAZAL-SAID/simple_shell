@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * is_cdir - checks ":" if is in the current directory.
+ * _cdir_ - checks ":" if is in the current directory.
  * @path: type char pointer char.
  * @i: type int pointer of index.
  * Return: 1 if the path is searchable in the cd, 0 otherwise.
  */
-int is_cdir(char *path, int *i)
+int _cdir_(char *path, int *i)
 {
 	if (path[*i] == ':')
 		return (1);
@@ -44,7 +44,7 @@ char *_which(char *cmd, char **_environ)
 		i = 0;
 		while (token_path != NULL)
 		{
-			if (is_cdir(path, &i))
+			if (_cdir_(path, &i))
 				if (stat(cmd, &st) == 0)
 					return (cmd);
 			len_dir = _strlen(token_path);

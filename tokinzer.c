@@ -148,7 +148,7 @@ int sp_cmd(data_shell *datash, char *input)
 	{
 		datash->input = list_l->line;
 		datash->args = sp_ln(datash->input);
-		loop = exec_line(datash);
+		loop = ln_exe(datash);
 		free(datash->args);
 
 		if (loop == 0)

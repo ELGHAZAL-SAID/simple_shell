@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * bring_line - assigns the line var for get_line
+ * ln_br - assigns the line var for ln_getter
  * @lineptr: Buffer that store the input str
  * @buffer: str that is been called to line
  * @n: size of line
  * @j: size of buffer
  */
-void bring_line(char **lineptr, size_t *n, char *buffer, size_t j)
+void ln_br(char **lineptr, size_t *n, char *buffer, size_t j)
 {
 
 	if (*lineptr == NULL)
@@ -34,13 +34,13 @@ void bring_line(char **lineptr, size_t *n, char *buffer, size_t j)
 	}
 }
 /**
- * get_line - Read inpt from stream
+ * ln_getter - Read inpt from stream
  * @lineptr: buffer that stores the input
  * @n: size of lineptr
  * @stream: stream to read from
  * Return: The number of bytes
  */
-ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
+ssize_t ln_getter(char **lineptr, size_t *n, FILE *stream)
 {
 	int i;
 	static ssize_t input;
@@ -76,7 +76,7 @@ ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
 		input++;
 	}
 	buffer[input] = '\0';
-	bring_line(lineptr, n, buffer, input);
+	ln_br(lineptr, n, buffer, input);
 	retval = input;
 	if (i != 0)
 		input = 0;
