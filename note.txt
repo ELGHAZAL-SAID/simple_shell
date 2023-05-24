@@ -1,0 +1,36 @@
+terminal.c = prompt.c
+_realoc.c -> helper_functions()
+_getline.c = readline.c
+_strtok.c = _strtok.c
+_c_str_tok.c = tokinized_string.c
+promt.c(builtin()) = parssing_cmd.c
+env_linked_list.c = env_shell.c
+__exit.c = exit_shell.c
+_cd.c = change_dir.c
+print_error.c = error_handler.c
+non_interactive.c = clean_cmd.c
+-------------------------
+prompt() = terminal()
+ignore_space() = rm_space()
+_realoc() = _realoc():
+get_line() = read_line();
+t_strlen() = token_len()
+t_size() = token_size();
+ignore_delm() = rm_delm();
+_str_tok() = _strtok();
+c_t_size() = count_delimiters()
+c_str_tok() = tokenize_string()
+_cd() = not used function
+built_in() = builtin_func();
+__exit() = _quit();
+_env = env_shell()
+env_linked_list() = env_shell_linked();
+c_strcat = strcat_rmf();
+c_set_env() = set_env();
+not_found() = is_not_found();
+cant_cd_to() = cant_access_to_dir();
+illigal_num() = illigal_args_number()
+_cd() = change_dir();
+cd_exec() = exec_cd();
+cd_only = cd_home();
+
