@@ -11,6 +11,7 @@ print_error.c = error_handler.c
 non_interactive.c = clean_cmd.c
 free_double_ptr.c = free_arr.c
 linked_list.c = bondagani.c
+env_linked_list.c = env_list.c
 -------------------------
 prompt() = terminal()
 ignore_space() = rm_space()
@@ -40,3 +41,5 @@ print_list() = write_list();
 add_end_node() = add_node_end();
 delete_nodeint_at_index= rn_node_int_at_index;
 free_linked_list() = free_list();
+env_linked_list() = env_list();
+_env() = print_env();

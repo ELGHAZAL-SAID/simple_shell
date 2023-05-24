@@ -73,5 +73,8 @@ int rn_node_int_at_index(link_t **head, int index);
 size_t write_list(link_t *h);
 link_t *add_node_end(link_t **head, char *str);
 
+link_t *env_list(char **environ);
+int print_env(char **string, link_t *environ);
+
 
 #endif
