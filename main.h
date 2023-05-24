@@ -30,9 +30,6 @@ typedef struct link
 
 void rm_newline(char *cmd);
 void rm_comment(char *cmd);
-void _quit(char **token);
-void env_shell(char **token __attribute__((unused)));
-extern void clean_shell(void);
 int parsing_cmd(char *cmd);
 char *path_checker(char *cmd);
 extern void ready_cmd(char **buffer, int cmd_type);
@@ -59,7 +56,6 @@ int builtin_func(char **token, link_t *env, int number, char **cmd);
 int env_shell(char **cmd, link_t *env);
 link_t *env_shell_linked(char **env);
 int _quit(char **str, link_t *env, int number, char **cmd);
-
 void illegal_args_number(char *str, int c_n, link_t *env);
 void is_not_found(char *str, int c_n, link_t *env);
 void cant_eccess_to_dir(char *str, int c_n, link_t *env);
@@ -71,6 +67,11 @@ int set_env(link_t **e, char *v_name, char *d);
 char *strcat_rmf(char *d, char *s);
 
 void free_arr(char **string);
+
+void free_list(link_t *list);
+int rn_node_int_at_index(link_t **head, int index);
+size_t write_list(link_t *h);
+link_t *add_node_end(link_t **head, char *str);
 
 
 #endif

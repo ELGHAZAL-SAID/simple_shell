@@ -158,6 +158,6 @@ int change_dir(char **string, link_t *enviro, int num)
 	}
 	else
 		cd_home(enviro, cur);
-	free_double_ptr(string);
+	free_arr(string);
 	return (count);
 }

@@ -27,7 +27,7 @@ link_t *env_shell_linked(char **env)
  */
 int env_shell(char **cmd, link_t *env)
 {
-	free_double_ptr(cmd);
+	free_arr(cmd);
 	print_list(env);
 	return (0);
 }
