@@ -14,7 +14,8 @@ int terminal(char **en)
 	char *command, *n_command, **token;
 
 	env = env_shell_linked(en);
-	do {
+	do
+	{
 		cdn++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);

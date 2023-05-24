@@ -73,7 +73,7 @@ int setenv_(link_t **env, char **str)
 
 	if (str[1] == NULL || str[2] == NULL)
 	{
-		write(STDOUT_FILENO, "Too few arguments\n", 18);
+		write(STDOUT_FILENO, "Too few arguments\n", 19);
 		free_arr(str);
 		return (-1);
 	}

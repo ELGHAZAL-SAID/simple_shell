@@ -77,5 +77,5 @@ int unsetenv_(link_t **env, char **str);
 char *_which_cmd(char *str, link_t *env);
 void clean_cmd(link_t *env);
 
-
+int _strcmp(char *s1, char *s2);
 #endif
