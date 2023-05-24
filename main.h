@@ -93,14 +93,14 @@ typedef struct builtin_s
 } builtin_t;
 
 /* aux_lists.c */
-sep_list *add_sep_node_end(sep_list **head, char sep);
-void free_sep_list(sep_list **head);
-line_list *add_line_node_end(line_list **head, char *line);
-void free_line_list(line_list **head);
+sep_list *a_end_node(sep_list **head, char sep);
+void list_free(sep_list **head);
+line_list *add_line_to_node(line_list **head, char *line);
+void free_ln_in_list(line_list **head);
 
 /* aux_lists2.c */
-r_var *add_rvar_node(r_var **head, int lvar, char *var, int lval);
-void free_rvar_list(r_var **head);
+r_var *addrvarnode(r_var **head, int lvar, char *var, int lval);
+void freervarlist(r_var **head);
 
 /* aux_str functions */
 char *_strcat(char *dest, const char *src);
@@ -117,29 +117,29 @@ char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
 /* aux_str2.c */
 char *_strdup(const char *s);
 int _strlen(const char *s);
-int cmp_chars(char str[], const char *delim);
+int compare_c(char str[], const char *delim);
 char *_strtok(char str[], const char *delim);
 int _isdigit(const char *s);
 
 /* aux_str3.c */
-void rev_string(char *s);
+void reverse_s(char *s);
 
 /* check_syntax_error.c */
-int repeated_char(char *input, int i);
-int error_sep_op(char *input, int i, char last);
-int first_char(char *input, int *i);
-void print_syntax_error(data_shell *datash, char *input, int i, int bool);
-int check_syntax_error(data_shell *datash, char *input);
+int char_rep(char *input, int i);
+int err_s_o(char *input, int i, char last);
+int char_ft(char *input, int *i);
+void p_s_err(data_shell *datash, char *input, int i, int bool);
+int handle_s_err(data_shell *datash, char *input);
 
 /* shell_loop.c */
-char *without_comment(char *in);
-void shell_loop(data_shell *datash);
+char *w_out_cmt(char *in);
+void sh_lp(data_shell *datash);
 
 /* read_line.c */
-char *read_line(int *i_eof);
+char *rd_ln(int *i_eof);
 
 /* split.c */
-char *swap_char(char *input, int bool);
+char *sw_ch(char *input, int bool);
 void add_nodes(sep_list **head_s, line_list **head_l, char *input);
 void go_next(sep_list **list_s, line_list **list_l, data_shell *datash);
 int split_commands(data_shell *datash, char *input);

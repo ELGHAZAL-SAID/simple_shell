@@ -23,7 +23,7 @@ int terminal(char **en)
 		signal(SIGINT, ctrl_c);
 		command = NULL;
 		p = 0;
-		p = read_line(&command);
+		p = rd_ln(&command);
 		ctrl_D(p, command, env);
 		n_command = command;
 		command = rm_space(command);

@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * read_line - read the command.
+ * rd_ln - read the command.
  * @string: the string.
  * Return: num of chars.
  */
-size_t read_line(char **string)
+size_t rd_ln(char **string)
 {
 	ssize_t x = 0, size = 0, error = 0, error1 = 0, y = 0;
 	char buffer[1024];

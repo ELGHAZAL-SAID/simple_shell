@@ -34,13 +34,13 @@ int _strlen(const char *s)
 }
 
 /**
- * cmp_chars - compare chars of strings
+ * compare_c - compare chars of strings
  * @str: input string.
  * @delim: delimiter.
  *
  * Return: 1 if are equals, 0 if not.
  */
-int cmp_chars(char str[], const char *delim)
+int compare_c(char str[], const char *delim)
 {
 	unsigned int i, j, k;
 
@@ -75,7 +75,7 @@ char *_strtok(char str[], const char *delim)
 
 	if (str != NULL)
 	{
-		if (cmp_chars(str, delim))
+		if (compare_c(str, delim))
 			return (NULL);
 		splitted = str; /*Store first address*/
 		i = _strlen(str);

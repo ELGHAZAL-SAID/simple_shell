@@ -22,7 +22,7 @@ void clean_cmd(link_t *env)
 	int cdn = 0, xt = 0;
 	char *command = NULL, *n_command = NULL, **n_line, **token;
 
-	p = read_line(&command);
+	p = rd_ln(&command);
 	if (p == 0)
 	{
 		free(command);
