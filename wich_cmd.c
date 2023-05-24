@@ -21,9 +21,9 @@ char *_which_cmd(char *str, link_t *env)
 		if (toks[x][0] == '\0')
 			cat = getcwd(cat, 0);
 		else
-			cat = strdup(toks[x]);
-		cat = strcat(cat, "/");
-		cat = strcat(cat, str);
+			cat = _strdup(toks[x]);
+		cat = _strcat(cat, "/");
+		cat = _strcat(cat, str);
 		if (access(cat, F_OK) == 0)
 		{
 			free_arr(toks);

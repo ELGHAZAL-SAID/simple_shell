@@ -51,7 +51,7 @@ link_t *add_node_end(link_t **head, char *str)
 	if (new == NULL)
 		return (NULL);
 
-	new->value = strdup(str);
+	new->value = _strdup(str);
 	new->next = NULL;
 
 	holder = *head;

@@ -77,9 +77,9 @@ int setenv_(link_t **env, char **str)
 		free_arr(str);
 		return (-1);
 	}
-	cat = strdup(str[1]);
-	cat = strcat(cat, "=");
-	cat = strcat(cat, str[2]);
+	cat = _strdup(str[1]);
+	cat = _strcat(cat, "=");
+	cat = _strcat(cat, str[2]);
 	idx = is_found_env(*env, str[1]);
 	if (idx == -1)
 	{
@@ -94,7 +94,7 @@ int setenv_(link_t **env, char **str)
 			x++;
 		}
 		free(holder->value);
-		holder->value = strdup(cat);
+		holder->value = _strdup(cat);
 	}
 	free(cat);
 	free_arr(str);
