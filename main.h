@@ -49,8 +49,10 @@ int terminal(char **envirment);
 void *_realloc(void *ptr, unsigned int oldSize, unsigned int newSize);
 char *rm_space(char *str);
 size_t read_line(char **str);
-char **_strtok(char *str, char *delimiter)
-char *rm_delm(char *str, char delimiter)
-int token_size(char *str, char delimiter)
-int token_len(char *str, int index, char delimiter)
+char **_strtok(char *str, char *delimiter);
+char *rm_delm(char *str, char delimiter);
+int token_size(char *str, char delimiter);
+int token_len(char *str, int index, char delimiter);
+int count_delimiters(char *str, char delimiter);
+char **tokenize_string(char *str, char *delimiter);
 #endif

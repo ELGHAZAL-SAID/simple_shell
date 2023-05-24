@@ -56,45 +56,6 @@ void rm_comment(char *cmd)
 }
 
 /**
- *_strtok_r - tokenizing a string
- *@string: string to be tokenized
- *@delimiter: delimiter to used to tokenize the string
- *@saved_ptr: pointer to track of the next token
- *Return: The next token
- */
-char *_strtok_(char *string, char *delimiter, char **saved_ptr)
-{
-	char *fin = NULL;
-
-	if (string == NULL)
-		string = *saved_ptr;
-
-	if (*string == '\0')
-	{
-		*saved_ptr = string;
-		return (NULL);
-	}
-
-	string += strspn(string, delimiter);
-	if (*string == '\0')
-	{
-		*saved_ptr = string;
-		return (NULL);
-	}
-
-	fin = string + strcspn(string, delimiter);
-	if (*fin == '\0')
-	{
-		*saved_ptr = fin;
-		return (string);
-	}
-
-	*fin = '\0';
-	*saved_ptr = fin + 1;
-	return (string);
-}
-
-/**
  * _realloc - reallocates a memory block
  * @ptr: pointer already allocated with a call to malloc
  * @oldSize: size of pointer
