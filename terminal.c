@@ -17,7 +17,7 @@ int terminal(char **en)
 	do {
 		cdn++;
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "$ ", 2);
+			write(STDOUT_FILENO, "~/shell$ ", 9);
 		else
 			clean_cmd(env);
 		signal(SIGINT, ctrl_c);
