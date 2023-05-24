@@ -75,6 +75,7 @@ link_t *add_node_end(link_t **head, char *str);
 
 link_t *env_list(char **environ);
 int print_env(char **string, link_t *environ);
+int is_found_env(link_t *env, char *str);
 
 void ctrl_c(int n);
 void ctrl_D(int i, char *command, link_t *env);
