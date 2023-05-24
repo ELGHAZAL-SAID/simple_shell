@@ -146,10 +146,10 @@ int sp_cmd(data_shell *datash, char *input);
 char **sp_ln(char *input);
 
 /* rep_var.c */
-void check_env(r_var **h, char *in, data_shell *data);
-int check_vars(r_var **h, char *in, char *st, data_shell *data);
-char *replaced_input(r_var **head, char *input, char *new_input, int nlen);
-char *rep_var(char *input, data_shell *datash);
+void _handle_env(r_var **h, char *in, data_shell *data);
+int _handle_vars(r_var **h, char *in, char *st, data_shell *data);
+char *rp_inp(r_var **head, char *input, char *new_input, int nlen);
+char *repeat_var(char *input, data_shell *datash);
 
 /* get_line.c */
 void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);

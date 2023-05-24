@@ -63,7 +63,7 @@ void sh_lp(data_shell *datash)
 				free(input);
 				continue;
 			}
-			input = rep_var(input, datash);
+			input = repeat_var(input, datash);
 			loop = sp_cmd(datash, input);
 			datash->counter += 1;
 			free(input);

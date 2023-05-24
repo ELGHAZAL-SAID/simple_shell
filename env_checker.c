@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * check_env - checks if the typed variable is an env variable
+ * _handle_env - checks if the typed variable is an env variable
  *
  * @h: head of linked list
  * @in: input string
  * @data: data structure
  * Return: no return
  */
-void check_env(r_var **h, char *in, data_shell *data)
+void _handle_env(r_var **h, char *in, data_shell *data)
 {
 	int row, chr, j, lval;
 	char **_envr;
@@ -42,7 +42,7 @@ void check_env(r_var **h, char *in, data_shell *data)
 }
 
 /**
- * check_vars - check if the typed variable is $$ or $?
+ * _handle_vars - check if the typed variable is $$ or $?
  *
  * @h: head of the linked list
  * @in: input string
@@ -50,7 +50,7 @@ void check_env(r_var **h, char *in, data_shell *data)
  * @data: data structure
  * Return: no return
  */
-int check_vars(r_var **h, char *in, char *st, data_shell *data)
+int _handle_vars(r_var **h, char *in, char *st, data_shell *data)
 {
 	int i, lst, lpd;
 
@@ -76,7 +76,7 @@ int check_vars(r_var **h, char *in, char *st, data_shell *data)
 			else if (in[i + 1] == ';')
 				addrvarnode(h, 0, NULL, 0);
 			else
-				check_env(h, in + i, data);
+				_handle_env(h, in + i, data);
 		}
 	}
 
@@ -84,7 +84,7 @@ int check_vars(r_var **h, char *in, char *st, data_shell *data)
 }
 
 /**
- * replaced_input - replaces string into variables
+ * rp_inp - replaces string into variables
  *
  * @head: head of the linked list
  * @input: input string
@@ -92,7 +92,7 @@ int check_vars(r_var **h, char *in, char *st, data_shell *data)
  * @nlen: new length
  * Return: replaced string
  */
-char *replaced_input(r_var **head, char *input, char *new_input, int nlen)
+char *rp_inp(r_var **head, char *input, char *new_input, int nlen)
 {
 	r_var *indx;
 	int i, j, k;
@@ -136,13 +136,13 @@ char *replaced_input(r_var **head, char *input, char *new_input, int nlen)
 }
 
 /**
- * rep_var - calls functions to replace string into vars
+ * repeat_var - calls functions to replace string into vars
  *
  * @input: input string
  * @datash: data structure
  * Return: replaced string
  */
-char *rep_var(char *input, data_shell *datash)
+char *repeat_var(char *input, data_shell *datash)
 {
 	r_var *head, *indx;
 	char *status, *new_input;
@@ -151,7 +151,7 @@ char *rep_var(char *input, data_shell *datash)
 	status = aux_itoa(datash->status);
 	head = NULL;
 
-	olen = check_vars(&head, input, status, datash);
+	olen = _handle_vars(&head, input, status, datash);
 
 	if (head == NULL)
 	{
@@ -173,7 +173,7 @@ char *rep_var(char *input, data_shell *datash)
 	new_input = malloc(sizeof(char) * (nlen + 1));
 	new_input[nlen] = '\0';
 
-	new_input = replaced_input(&head, input, new_input, nlen);
+	new_input = rp_inp(&head, input, new_input, nlen);
 
 	free(input);
 	free(status);
