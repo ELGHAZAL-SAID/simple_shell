@@ -23,7 +23,7 @@ int _quit(char **str, link_t *env, int number, char **cmd)
 
 	if (ls == -1)
 	{
-		illegal_number(str[1], number, env);
+		illegal_args_number(str[1], number, env);
 		free_double_ptr(str);
 		return (2);
 	}

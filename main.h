@@ -68,4 +68,7 @@ int change_dir(char **string, link_t *enviro, int num);
 int exec_cd(link_t *e, char *cur, char *dir, char *str, int num);
 void cd_home(link_t *e, char *cur);
 int set_env(link_t **e, char *v_name, char *d);
+char *strcat_rmf(char *d, char *s);
+
+
 #endif

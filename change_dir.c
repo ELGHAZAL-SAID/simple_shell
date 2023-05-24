@@ -59,8 +59,8 @@ int set_env(link_t **e, char *v_name, char *d)
 		handler = handler->next;
 		i++;
 	}
-	free(handler->var);
-	handler->var = strdup(str);
+	free(handler->value);
+	handler->value = strdup(str);
 	free(str);
 	return (0);
 }
@@ -105,7 +105,7 @@ int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 		chdir(dir);
 		cur = NULL;
 		cur = getcwd(cur, 0);
-		set_env(&env, "PWD", cur);
+		set_env(&e, "PWD", cur);
 		free(cur);
 	}
 	else
@@ -120,7 +120,7 @@ int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 /**
  * change_dir - change directory
  * @string: user's typed in command
- * @enviro: enviroment linked list to retrieve HOME and OLDPWD paths
+ * @enviro: enviroment list to retrieve HOME and OLDPWD paths
  * @num: nth user command, to be used at error message
  * Return: 0 if success 2 if failed
  */
