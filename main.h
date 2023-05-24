@@ -162,11 +162,11 @@ int ln_exe(data_shell *datash);
 int _cdir_(char *path, int *i);
 char *_which_shell(char *cmd, char **_environ);
 int _is_exe_(data_shell *datash);
-int check_error_cmd(char *dir, data_shell *datash);
-int cmd_exec(data_shell *datash);
+int handle_err_cmd(char *dir, data_shell *datash);
+int exe_command(data_shell *datash);
 
 /* env1.c */
-char *_getenv(const char *name, char **_environ);
+char *_get_env_(const char *name, char **_environ);
 int _env(data_shell *datash);
 
 /* env2.c */

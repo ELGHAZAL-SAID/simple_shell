@@ -35,7 +35,7 @@ char *_which_shell(char *cmd, char **_environ)
 	int len_dir, len_cmd, i;
 	struct stat st;
 
-	path = _getenv("PATH", _environ);
+	path = _get_env_("PATH", _environ);
 	if (path)
 	{
 		ptr_path = _strdup(path);
@@ -118,13 +118,13 @@ int _is_exe_(data_shell *datash)
 }
 
 /**
- * check_error_cmd - verifies if user has permissions to access
+ * handle_err_cmd - verifies if user has permissions to access
  *
  * @dir: destination directory
  * @datash: data structure
  * Return: 1 if there is an error, 0 if not
  */
-int check_error_cmd(char *dir, data_shell *datash)
+int handle_err_cmd(char *dir, data_shell *datash)
 {
 	if (dir == NULL)
 	{
@@ -155,12 +155,12 @@ int check_error_cmd(char *dir, data_shell *datash)
 }
 
 /**
- * cmd_exec - executes command lines
+ * exe_command - executes command lines
  *
  * @datash: data relevant (args and input)
  * Return: 1 on success.
  */
-int cmd_exec(data_shell *datash)
+int exe_command(data_shell *datash)
 {
 	pid_t pd;
 	pid_t wpd;
@@ -175,7 +175,7 @@ int cmd_exec(data_shell *datash)
 	if (exec == 0)
 	{
 		dir = _which_shell(datash->args[0], datash->_environ);
-		if (check_error_cmd(dir, datash) == 1)
+		if (handle_err_cmd(dir, datash) == 1)
 			return (1);
 	}
 

@@ -18,5 +18,5 @@ int ln_exe(data_shell *datash)
 	if (builtin != NULL)
 		return (builtin(datash));
 
-	return (cmd_exec(datash));
+	return (exe_command(datash));
 }
