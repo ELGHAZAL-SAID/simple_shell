@@ -25,7 +25,7 @@ void _quit(char **token)
 		arg = atoi(token[1]);
 		if (arg == -1)
 		{
-			printf("%s : 1: exit: Illegal number: %s\n",shell ,token[1]);;
+			printf("%s : 1: exit: Illegal number: %s\n", shell, token[1]);;
 			st = 2;
 		}
 		else

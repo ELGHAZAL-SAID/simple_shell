@@ -1,10 +1,9 @@
 #include "main.h"
 
-
-char **cmd = NULL;
-char *ln = NULL;
-char *shell = NULL;
-int st = 0;
+extern char **commands = NULL;
+extern char *line = NULL;
+extern char *shell_name = NULL;
+extern int status = 0;
 
 /**
  * main - shell programe.
