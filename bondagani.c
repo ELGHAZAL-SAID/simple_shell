@@ -35,10 +35,10 @@ size_t write_list(link_t *h)
 }
 
 /**
- * add_end_node - add node to end of linked list
- * @head: pointer to head of linked list
- * @str: data to new node
- * Return: pointer to new linked list
+ * add_node_end - add a node in the end of the list.
+ * @head: head node.
+ * @str: value of the node to add.
+ * Return: the adding node.
  */
 link_t *add_node_end(link_t **head, char *str)
 {
@@ -71,10 +71,10 @@ link_t *add_node_end(link_t **head, char *str)
 }
 
 /**
- * delete_nodeint_at_index - removing node at index
- * @head: input head address
- * @index: input index
- * Return: 1 if success, else -1
+ * rm_node_int_at_index - delete a node from a list.
+ * @head: head node.
+ * @index: node's index to delete.
+ * Return: 1 or -1.
  */
 int rm_node_int_at_index(link_t **head, int index)
 {
@@ -109,8 +109,8 @@ int rm_node_int_at_index(link_t **head, int index)
 }
 
 /**
- * free_linked_list - frees linked list
- * @list: linked list
+ * free_list - make a linkde list free.
+ * @list: linked list nodes.
  */
 void free_list(link_t *list)
 {
