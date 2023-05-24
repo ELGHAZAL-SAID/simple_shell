@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * swap_char - swaps | and & for non-printed chars
@@ -181,7 +181,7 @@ char **split_line(char *input)
 	char **tokens;
 	char *token;
 
-	bsize = TOK_BUFSIZE;
+	bsize = TOK_BUFFERSIZE;
 	tokens = malloc(sizeof(char *) * (bsize));
 	if (tokens == NULL)
 	{
@@ -196,7 +196,7 @@ char **split_line(char *input)
 	{
 		if (i == bsize)
 		{
-			bsize += TOK_BUFSIZE;
+			bsize += TOK_BUFFERSIZE;
 			tokens = _reallocdp(tokens, i, sizeof(char *) * bsize);
 			if (tokens == NULL)
 			{
