@@ -9,6 +9,7 @@ __exit.c = exit_shell.c
 _cd.c = change_dir.c
 print_error.c = error_handler.c
 non_interactive.c = clean_cmd.c
+free_double_ptr.c = free_arr.c
 -------------------------
 prompt() = terminal()
 ignore_space() = rm_space()
@@ -33,4 +34,5 @@ illigal_num() = illigal_args_number()
 _cd() = change_dir();
 cd_exec() = exec_cd();
 cd_only = cd_home();
+free_double_ptr() = free_arr();
 

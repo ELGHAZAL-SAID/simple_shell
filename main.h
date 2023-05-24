@@ -70,5 +70,7 @@ void cd_home(link_t *e, char *cur);
 int set_env(link_t **e, char *v_name, char *d);
 char *strcat_rmf(char *d, char *s);
 
+void free_arr(char **string);
+
 
 #endif
