@@ -44,14 +44,14 @@ char *sw_ch(char *input, int bool)
 }
 
 /**
- * add_nodes - add separators and command lines in the lists
+ * _a_node_ - add separators and command lines in the lists
  *
  * @head_s: head of separator list
  * @head_l: head of command lines list
  * @input: input string
  * Return: no return
  */
-void add_nodes(sep_list **head_s, line_list **head_l, char *input)
+void _a_node_(sep_list **head_s, line_list **head_l, char *input)
 {
 	int i;
 	char *line;
@@ -80,14 +80,14 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 }
 
 /**
- * go_next - go to the next command line stored
+ * _next_ - go to the next command line stored
  *
  * @list_s: separator list
  * @list_l: command line list
  * @datash: data structure
  * Return: no return
  */
-void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
+void _next_(sep_list **list_s, line_list **list_l, data_shell *datash)
 {
 	int loop_sep;
 	sep_list *ls_s;
@@ -122,14 +122,14 @@ void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
 }
 
 /**
- * split_commands - splits command lines according to
+ * sp_cmd - splits command lines according to
  * the separators ;, | and &, and executes them
  *
  * @datash: data structure
  * @input: input string
  * Return: 0 to exit, 1 to continue
  */
-int split_commands(data_shell *datash, char *input)
+int sp_cmd(data_shell *datash, char *input)
 {
 
 	sep_list *head_s, *list_s;
@@ -139,7 +139,7 @@ int split_commands(data_shell *datash, char *input)
 	head_s = NULL;
 	head_l = NULL;
 
-	add_nodes(&head_s, &head_l, input);
+	_a_node_(&head_s, &head_l, input);
 
 	list_s = head_s;
 	list_l = head_l;
@@ -147,14 +147,14 @@ int split_commands(data_shell *datash, char *input)
 	while (list_l != NULL)
 	{
 		datash->input = list_l->line;
-		datash->args = split_line(datash->input);
+		datash->args = sp_ln(datash->input);
 		loop = exec_line(datash);
 		free(datash->args);
 
 		if (loop == 0)
 			break;
 
-		go_next(&list_s, &list_l, datash);
+		_next_(&list_s, &list_l, datash);
 
 		if (list_l != NULL)
 			list_l = list_l->next;
@@ -169,12 +169,12 @@ int split_commands(data_shell *datash, char *input)
 }
 
 /**
- * split_line - tokenizes the input string
+ * sp_ln - tokenizes the input string
  *
  * @input: input string.
  * Return: string splitted.
  */
-char **split_line(char *input)
+char **sp_ln(char *input)
 {
 	size_t bsize;
 	size_t i;
