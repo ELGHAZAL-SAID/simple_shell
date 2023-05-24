@@ -59,4 +59,8 @@ int builtin_func(char **token, link_t *env, int number, char **cmd);
 int env_shell(char **cmd, link_t *env);
 link_t *env_shell_linked(char **env);
 int _quit(char **str, link_t *env, int number, char **cmd);
+
+void illegal_args_number(char *str, int c_n, link_t *env);
+void is_not_found(char *str, int c_n, link_t *env);
+void cant_eccess_to_dir(char *str, int c_n, link_t *env);
 #endif
