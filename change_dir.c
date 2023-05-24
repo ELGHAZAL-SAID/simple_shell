@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * strcat_rmf - concatenate and ignoring the first character
@@ -48,9 +48,9 @@ int set_env(link_t **e, char *v_name, char *d)
 	char *str;
 	link_t *handler;
 
-	str = _strdup(v_name);
-	str = _strcat(str, "=");
-	str = _strcat(str, d);
+	str = strdup(v_name);
+	str = strcat(str, "=");
+	str = strcat(str, d);
 	index = find_env(*e, v_name);
 
 	handler = *e;
@@ -60,7 +60,7 @@ int set_env(link_t **e, char *v_name, char *d)
 		i++;
 	}
 	free(handler->var);
-	handler->var = _strdup(str);
+	handler->var = strdup(str);
 	free(str);
 	return (0);
 }
@@ -147,11 +147,11 @@ int change_dir(char **string, link_t *enviro, int num)
 			if (string[1][0] != '/')
 			{
 				dir = getcwd(dir, 0);
-				dir = _strcat(dir, "/");
-				dir = _strcat(dir, string[1]);
+				dir = strcat(dir, "/");
+				dir = strcat(dir, string[1]);
 			}
 			else
-				dir = _strdup(string[1]);
+				dir = strdup(string[1]);
 		}
 		count = exec_cd(enviro, cur, dir, string[1], num);
 		free(dir);
