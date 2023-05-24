@@ -35,5 +35,5 @@ size_t read_line(char **str)
     }
 
     free(buf);
-    return sz;
+    return (sz);
 }

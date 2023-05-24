@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_list - _print linked list
+ *  write_list - _print linked list
  * @h: linked list
  * Return: size of linked list
  */
