@@ -63,4 +63,9 @@ int _quit(char **str, link_t *env, int number, char **cmd);
 void illegal_args_number(char *str, int c_n, link_t *env);
 void is_not_found(char *str, int c_n, link_t *env);
 void cant_eccess_to_dir(char *str, int c_n, link_t *env);
+
+int change_dir(char **string, link_t *enviro, int num);
+int exec_cd(link_t *e, char *cur, char *dir, char *str, int num);
+void cd_home(link_t *e, char *cur);
+int set_env(link_t **e, char *v_name, char *d);
 #endif
