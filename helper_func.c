@@ -33,27 +33,6 @@ void rm_newline(char *cmds)
 	cmds[i] = '\0';
 }
 
-/**
- * rm_comment - remove comments from a command.
- * @cmd: the commande.
- *
- * Return: 0.
- */
-
-void rm_comment(char *cmd)
-{
-	int i = 0;
-
-	if (cmd[i] == '#')
-		cmd[i] = '\0';
-	while (cmd[i] != '\0')
-	{
-		if (cmd[i] == '#' && cmd[i - 1] == ' ')
-			break;
-		i++;
-	}
-	cmd[i] = '\0';
-}
 
 /**
  * _realloc - reallocates a memory block
