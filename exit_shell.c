@@ -1,30 +1,31 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _quit - exits the shell
- * @str: command.
- * @env: envirement.
- * @number: number.
- * @cmd: the command.
- * Return: nothing.
+ * exit_shell - exits the shell
+ *
+ * @datash: data relevant (status and args)
+ * Return: 0 on success.
  */
-int _quit(char **str, link_t *env, int number, char **cmd)
+int exit_shell(data_shell *datash)
 {
-	int ls = 0;
+	unsigned int ustatus;
+	int is_digit;
+	int str_len;
+	int big_number;
 
-	if (str[1] != NULL)
-		ls = atoi(str[1]);
-
-	if (ls == -1)
+	if (datash->args[1] != NULL)
 	{
-		illegal_args_number(str[1], number, env);
-		free_arr(str);
-		return (2);
+		ustatus = _atoi(datash->args[1]);
+		is_digit = _isdigit(datash->args[1]);
+		str_len = _strlen(datash->args[1]);
+		big_number = ustatus > (unsigned int)INT_MAX;
+		if (!is_digit || str_len > 10 || big_number)
+		{
+			get_error(datash, 2);
+			datash->status = 2;
+			return (1);
+		}
+		datash->status = (ustatus % 256);
 	}
-	free_arr(str);
-	free_list(env);
-	if (cmd != NULL)
-		free_arr(cmd);
-	exit(ls);
-
+	return (0);
 }
