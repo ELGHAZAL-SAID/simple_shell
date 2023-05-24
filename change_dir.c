@@ -105,7 +105,7 @@ int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 		chdir(dir);
 		cur = NULL;
 		cur = getcwd(cur, 0);
-		set_env(&env, "PWD", cur);
+		set_env(&e, "PWD", cur);
 		free(cur);
 	}
 	else
