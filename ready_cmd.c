@@ -1,30 +1,5 @@
 #include "main.h"
 
-/**
- * ready_cmd - commande were ready to excute.
- * @buffer: the current commande.
- * @cmd_type: the type of the commande.
- *
- * Return: 0.
- */
-void ready_cmd(char **buffer, int cmd_type)
-{
-	pid_t pid;
-
-	if (cmd_type == EXTERN_CMD || cmd_type == PATH_CMD)
-	{
-		pid = fork();
-		if (pid == 0)
-			exec_cmd(buffer, cmd_type);
-		else
-		{
-			waitpid(pid, &st, 0);
-			st >>= 8;
-		}
-	}
-	else
-		exec_cmd(buffer, cmd_type);
-}
 
 /**
  * c_exit - frees list before exit.
@@ -58,10 +33,10 @@ int exe_ve(char **str, link_t *environ, int number)
 		p = 1;
 	}
 	else
-		holder = _which(s[0], environ);
+		holder = _which(str[0], environ);
 	if (access(holder, X_OK) != 0)
 	{
-		not_found(s[0], number, environ);
+		not_found(str[0], number, environ);
 		free_double_ptr(str);
 		return (127);
 	}
@@ -72,7 +47,7 @@ int exe_ve(char **str, link_t *environ, int number)
 		{
 			if (execve(holder, str, NULL) == -1)
 			{
-				not_found(s[0], number, environ);
+				not_found(str[0], number, environ);
 				c_exit(str, environ);
 			}
 		}
