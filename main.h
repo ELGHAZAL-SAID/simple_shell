@@ -160,8 +160,8 @@ int ln_exe(data_shell *datash);
 
 /* cmd_exec.c */
 int _cdir_(char *path, int *i);
-char *_which(char *cmd, char **_environ);
-int is_executable(data_shell *datash);
+char *_which_shell(char *cmd, char **_environ);
+int _is_exe_(data_shell *datash);
 int check_error_cmd(char *dir, data_shell *datash);
 int cmd_exec(data_shell *datash);
 

@@ -23,13 +23,13 @@ int _cdir_(char *path, int *i)
 }
 
 /**
- * _which - locates a command
+ * _which_shell - locates a command
  *
  * @cmd: command name
  * @_environ: environment variable
  * Return: location of the command.
  */
-char *_which(char *cmd, char **_environ)
+char *_which_shell(char *cmd, char **_environ)
 {
 	char *path, *ptr_path, *token_path, *dir;
 	int len_dir, len_cmd, i;
@@ -73,12 +73,12 @@ char *_which(char *cmd, char **_environ)
 }
 
 /**
- * is_executable - determines if is an executable
+ * _is_exe_ - determines if is an executable
  *
  * @datash: data structure
  * Return: 0 if is not an executable, other number if it does
  */
-int is_executable(data_shell *datash)
+int _is_exe_(data_shell *datash)
 {
 	struct stat st;
 	int i;
@@ -169,12 +169,12 @@ int cmd_exec(data_shell *datash)
 	char *dir;
 	(void) wpd;
 
-	exec = is_executable(datash);
+	exec = _is_exe_(datash);
 	if (exec == -1)
 		return (1);
 	if (exec == 0)
 	{
-		dir = _which(datash->args[0], datash->_environ);
+		dir = _which_shell(datash->args[0], datash->_environ);
 		if (check_error_cmd(dir, datash) == 1)
 			return (1);
 	}
@@ -183,7 +183,7 @@ int cmd_exec(data_shell *datash)
 	if (pd == 0)
 	{
 		if (exec == 0)
-			dir = _which(datash->args[0], datash->_environ);
+			dir = _which_shell(datash->args[0], datash->_environ);
 		else
 			dir = datash->args[0];
 		execve(dir + exec, datash->args, datash->_environ);

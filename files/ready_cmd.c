@@ -33,7 +33,7 @@ int exe_ve(char **str, link_t *environ, int number)
 		p = 1;
 	}
 	else
-		holder = _which_cmd(str[0], environ);
+		holder = _which_shell_cmd(str[0], environ);
 	if (access(holder, X_OK) != 0)
 	{
 		is_not_found(str[0], number, environ);

@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _which_cmd - fleshes out command by appending it to a matching PATH.
+ * _which_shell_cmd - fleshes out command by appending it to a matching PATH.
  * @str: command as string.
  * @env: env var.
  * Return: the string.
  */
-char *_which_cmd(char *str, link_t *env)
+char *_which_shell_cmd(char *str, link_t *env)
 {
 	char *pth, *cat = NULL, **toks;
 	int x = 0;
