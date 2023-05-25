@@ -82,7 +82,7 @@ typedef struct r_var_list
 
 /**
  * struct builtin_s -  struct for cmd args.
- * @name: The name of the cmd builtin 
+ * @name: The name of the cmd builtin.
  * @f: pointer function.
  */
 typedef struct builtin_s
