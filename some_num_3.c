@@ -73,7 +73,7 @@ void ajigad_d(void)
 	char *help = "exit: exit [n]\n Exit shell.\n";
 
 	write(STDOUT_FILENO, help, _strlen(help));
-	help = "Exits the shell with a status of N. If N is ommited, the exit";
+	help = "Exits the shell with a status of N. If N is commited, the exit";
 	write(STDOUT_FILENO, help, _strlen(help));
 	help = "status is that of the last command executed\n";
 	write(STDOUT_FILENO, help, _strlen(help));

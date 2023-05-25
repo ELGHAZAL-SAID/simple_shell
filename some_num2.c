@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _err_env_ - error message for env in get_env.
- * @datash: data relevant (counter, arguments)
- * Return: error message.
+ * _err_env_ - error message
+ * @datash: data
+ * Return: error.
  */
 char *_err_env_(data_shell *datash)
 {
@@ -36,10 +36,10 @@ char *_err_env_(data_shell *datash)
 	return (error);
 }
 /**
- * _err_p_127 - error message for path and failure denied permission.
- * @datash: data relevant (counter, arguments).
+ * _err_p_127 - error message.
+ * @datash: data.
  *
- * Return: The error string.
+ * Return: The error.
  */
 char *_err_p_127(data_shell *datash)
 {
@@ -57,13 +57,10 @@ char *_err_p_127(data_shell *datash)
 		free(ver_str);
 		return (NULL);
 	}
-	_strcpy(error, datash->av[0]);
-	_strcat(error, ": ");
-	_strcat(error, ver_str);
-	_strcat(error, ": ");
+	_strcpy(error, datash->av[0]), _strcat(error, ": ");
+	_strcat(error, ver_str), _strcat(error, ": ");
 	_strcat(error, datash->args[0]);
 	_strcat(error, ": Permission denied\n");
-	_strcat(error, "\0");
-	free(ver_str);
+	_strcat(error, "\0"), free(ver_str);
 	return (error);
 }
