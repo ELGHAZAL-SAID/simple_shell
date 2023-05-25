@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * reverse_s - reverses a string.
- * @s: input string.
- * Return: no return.
+ * reverse_s - reversing a string.
+ * @s: string.
  */
 void reverse_s(char *s)
 {
@@ -21,10 +20,6 @@ void reverse_s(char *s)
 	for (i = 0; i < (count - 1); i++)
 	{
 		for (j = i + 1; j > 0; j--)
-		{
-			temp = *(str + j);
-			*(str + j) = *(str + (j - 1));
-			*(str + (j - 1)) = temp;
-		}
+			temp = *(str + j), *(str + j) = *(str + (j - 1)), *(str + (j - 1)) = temp;
 	}
 }

@@ -1,33 +1,30 @@
 #include "main.h"
 
 /**
- * _strcat - concatenate two strings
- * @dest: char pointer the dest of the copied str
- * @src: const char pointer the source of str
- * Return: the dest
+ * _strcat - concatenating two strings
+ * @dest: char pointer
+ * @src: const char
+ * Return: the dest variable
  */
 char *_strcat(char *dest, const char *src)
 {
-	int i;
+	int i = 0;
 	int j;
 
-	for (i = 0; dest[i] != '\0'; i++)
-		;
+	while (dest[i] != '\0')
+		i++;
 
 	for (j = 0; src[j] != '\0'; j++)
-	{
-		dest[i] = src[j];
-		i++;
-	}
+		dest[i] = src[j], i++;
 
 	dest[i] = '\0';
 	return (dest);
 }
 /**
- * *_strcpy - Copies the string pointed to by src.
- * @dest: Type char pointer the dest of the copied str
- * @src: Type char pointer the source of str
- * Return: the dest.
+ * *_strcpy - Copies the string to by src variable.
+ * @dest: Type char pointer
+ * @src: Type char pointer
+ * Return: the dest pointer.
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -43,10 +40,10 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 /**
- * _strcmp - Function that compares two strings.
- * @s1: type str compared
- * @s2: type str compared
- * Return: Always 0.
+ * _strcmp - compares two strings.
+ * @s1: string compared
+ * @s2: string compared
+ * Return: 0.
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -62,10 +59,10 @@ int _strcmp(char *s1, char *s2)
 	return (0);
 }
 /**
- * _strchr - locates a character in a string,
+ * _strchr - locating a char in a str,
  * @s: string.
- * @c: character.
- * Return: the pointer to the first occurrence of the character c.
+ * @c: char.
+ * Return: the pointer to the first the character.
  */
 char *_strchr(char *s, char c)
 {
@@ -79,10 +76,10 @@ char *_strchr(char *s, char c)
 	return ('\0');
 }
 /**
- * _strspn - gets the length of a prefix substring.
- * @s: initial segment.
- * @accept: accepted bytes.
- * Return: the number of accepted bytes.
+ * _strspn - length getting of a prefix.
+ * @s:segment.
+ * @accept: bytes.
+ * Return: number of bytes.
  */
 int _strspn(char *s, char *accept)
 {
