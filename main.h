@@ -196,9 +196,9 @@ char *_aux_itoa_(int n);
 int _atoi(char *s);
 
 /* aux_error1.c */
-char *strcat_cd(data_shell *, char *, char *, char *);
-char *error_get_cd(data_shell *datash);
-char *error_not_found(data_shell *datash);
+char *_str_cat_cd_(data_shell *, char *, char *, char *);
+char *err_getter_cd(data_shell *datash);
+char *err_n_f(data_shell *datash);
 char *error_exit_shell(data_shell *datash);
 
 /* aux_error2.c */

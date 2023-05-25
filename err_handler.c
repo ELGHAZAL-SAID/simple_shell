@@ -19,13 +19,13 @@ int get_error(data_shell *datash, int eval)
 		error = error_path_126(datash);
 		break;
 	case 127:
-		error = error_not_found(datash);
+		error = err_n_f(datash);
 		break;
 	case 2:
 		if (_strcmp("exit", datash->args[0]) == 0)
 			error = error_exit_shell(datash);
 		else if (_strcmp("cd", datash->args[0]) == 0)
-			error = error_get_cd(datash);
+			error = err_getter_cd(datash);
 		break;
 	}
 

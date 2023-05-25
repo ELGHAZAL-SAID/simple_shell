@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * strcat_cd - function that concatenates the message for cd error
+ * _str_cat_cd_ - function that concatenates the message for cd error
  *
  * @datash: data relevant (directory)
  * @msg: message to print
@@ -9,7 +9,7 @@
  * @ver_str: counter lines
  * Return: error message
  */
-char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
+char *_str_cat_cd_(data_shell *datash, char *msg, char *error, char *ver_str)
 {
 	char *illegal_flag;
 
@@ -39,11 +39,11 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 }
 
 /**
- * error_get_cd - error message for cd command in get_cd
+ * err_getter_cd - error message for cd command in get_cd
  * @datash: data relevant (directory)
  * Return: Error message
  */
-char *error_get_cd(data_shell *datash)
+char *err_getter_cd(data_shell *datash)
 {
 	int length, len_id;
 	char *error, *ver_str, *msg;
@@ -70,7 +70,7 @@ char *error_get_cd(data_shell *datash)
 		return (NULL);
 	}
 
-	error = strcat_cd(datash, msg, error, ver_str);
+	error = _str_cat_cd_(datash, msg, error, ver_str);
 
 	free(ver_str);
 
@@ -78,11 +78,11 @@ char *error_get_cd(data_shell *datash)
 }
 
 /**
- * error_not_found - generic error message for command not found
+ * err_n_f - generic error message for command not found
  * @datash: data relevant (counter, arguments)
  * Return: Error message
  */
-char *error_not_found(data_shell *datash)
+char *err_n_f(data_shell *datash)
 {
 	int length;
 	char *error;
