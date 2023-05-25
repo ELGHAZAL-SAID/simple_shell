@@ -13,7 +13,7 @@ int ln_exe(data_shell *datash)
 	if (datash->args[0] == NULL)
 		return (1);
 
-	builtin = get_builtin(datash->args[0]);
+	builtin = built_getter(datash->args[0]);
 
 	if (builtin != NULL)
 		return (builtin(datash));

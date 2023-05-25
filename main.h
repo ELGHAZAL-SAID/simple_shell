@@ -182,17 +182,17 @@ void change_dir_previous(data_shell *datash);
 void change_dir_to_home(data_shell *datash);
 
 /* cd_shell.c */
-int cd_shell(data_shell *datash);
+int change_dir_to_shell(data_shell *datash);
 
 /* get_builtin */
-int (*get_builtin(char *cmd))(data_shell *datash);
+int (*built_getter(char *cmd))(data_shell *datash);
 
 /* _exit.c */
 int exit_shell(data_shell *datash);
 
 /* aux_stdlib.c */
-int get_len(int n);
-char *aux_itoa(int n);
+int len_getter(int n);
+char *_aux_itoa_(int n);
 int _atoi(char *s);
 
 /* aux_error1.c */

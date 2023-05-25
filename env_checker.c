@@ -148,7 +148,7 @@ char *repeat_var(char *input, data_shell *datash)
 	char *status, *new_input;
 	int olen, nlen;
 
-	status = aux_itoa(datash->status);
+	status = _aux_itoa_(datash->status);
 	head = NULL;
 
 	olen = _handle_vars(&head, input, status, datash);

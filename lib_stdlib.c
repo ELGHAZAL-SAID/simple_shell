@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * get_len - Get the lenght of a number.
+ * len_getter - Get the lenght of a number.
  * @n: type int number.
  * Return: Lenght of a number.
  */
-int get_len(int n)
+int len_getter(int n)
 {
 	unsigned int n1;
 	int lenght = 1;
@@ -28,14 +28,14 @@ int get_len(int n)
 	return (lenght);
 }
 /**
- * aux_itoa - function converts int to string.
+ * _aux_itoa_ - function converts int to string.
  * @n: type int number
  * Return: String.
  */
-char *aux_itoa(int n)
+char *_aux_itoa_(int n)
 {
 	unsigned int n1;
-	int lenght = get_len(n);
+	int lenght = len_getter(n);
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * (lenght + 1));
