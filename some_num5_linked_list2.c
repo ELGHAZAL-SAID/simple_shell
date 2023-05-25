@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * addrvarnode - adds a variable at the end
+ * addrvarnode - variable at the end
  * of a r_var list.
- * @head: head of the linked list.
- * @lvar: length of the variable.
- * @val: value of the variable.
- * @lval: length of the value.
- * Return: address of the head.
+ * @head: head
+ * @lvar: length
+ * @val: value
+ * @lval: length
+ * Return: head.
  */
 r_var *addrvarnode(r_var **head, int lvar, char *val, int lval)
 {
@@ -17,8 +17,7 @@ r_var *addrvarnode(r_var **head, int lvar, char *val, int lval)
 	if (new == NULL)
 		return (NULL);
 
-	new->len_var = lvar;
-	new->val = val;
+	new->len_var = lvar, new->val = val;
 	new->len_val = lval;
 
 	new->next = NULL;
@@ -39,9 +38,9 @@ r_var *addrvarnode(r_var **head, int lvar, char *val, int lval)
 }
 
 /**
- * freervarlist - frees a r_var list
- * @head: head of the linked list.
- * Return: no return.
+ * freervarlist - frees
+ * @head: head
+ * Return: no.
  */
 void freervarlist(r_var **head)
 {
@@ -52,10 +51,7 @@ void freervarlist(r_var **head)
 	{
 		curr = *head;
 		while ((temp = curr) != NULL)
-		{
-			curr = curr->next;
-			free(temp);
-		}
+			curr = curr->next, free(temp);
 		*head = NULL;
 	}
 }

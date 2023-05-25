@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * ln_exe - finds builtins and commands
+ * ln_exe - get builtins and cmds
  *
- * @datash: data relevant (args)
- * Return: 1 on success.
+ * @datash: data releving
+ * Return: 1 if success.
  */
 int ln_exe(data_shell *datash)
 {

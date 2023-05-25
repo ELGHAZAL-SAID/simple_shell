@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * a_end_node - adds a separator found at the end
- * of a sep_list.
- * @head: head of the linked list.
- * @sep: separator found (; | &).
- * Return: address of the head.
+ * a_end_node - adds a separator
+ * @head: head
+ * @sep: separator
+ * Return: the head.
  */
 sep_list *a_end_node(sep_list **head, char sep)
 {
@@ -34,9 +33,9 @@ sep_list *a_end_node(sep_list **head, char sep)
 }
 
 /**
- * list_free - frees a sep_list
- * @head: head of the linked list.
- * Return: no return.
+ * list_free - free
+ * @head: head
+ * Return: no.
  */
 void list_free(sep_list **head)
 {
@@ -56,11 +55,10 @@ void list_free(sep_list **head)
 }
 
 /**
- * add_line_to_node - adds a command line at the end
- * of a line_list.
- * @head: head of the linked list.
- * @line: command line.
- * Return: address of the head.
+ * add_line_to_node - adds a cmd to the end
+ * @head: head
+ * @line: cmd
+ * Return: head
  */
 line_list *add_line_to_node(line_list **head, char *line)
 {
@@ -89,9 +87,9 @@ line_list *add_line_to_node(line_list **head, char *line)
 }
 
 /**
- * free_ln_in_list - frees a line_list
- * @head: head of the linked list.
- * Return: no return.
+ * free_ln_in_list - frees
+ * @head: head.
+ * Return: no.
  */
 void free_ln_in_list(line_list **head)
 {

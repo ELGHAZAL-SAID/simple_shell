@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * len_getter - Get the lenght of a number.
- * @n: type int number.
- * Return: Lenght of a number.
+ * len_getter - length of a number getter.
+ * @n: number.
+ * Return: number Length.
  */
 int len_getter(int n)
 {
@@ -11,20 +11,11 @@ int len_getter(int n)
 	int lenght = 1;
 
 	if (n < 0)
-	{
-		lenght++;
-		n1 = n * -1;
-	}
+		lenght++, n1 = n * -1;
 	else
-	{
 		n1 = n;
-	}
 	while (n1 > 9)
-	{
-		lenght++;
-		n1 = n1 / 10;
-	}
-
+		lenght++, n1 = n1 / 10;
 	return (lenght);
 }
 /**
@@ -45,20 +36,13 @@ char *_aux_itoa_(int n)
 	*(buffer + lenght) = '\0';
 
 	if (n < 0)
-	{
-		n1 = n * -1;
-		buffer[0] = '-';
-	}
+	n1 = n * -1, buffer[0] = '-';
 	else
-	{
 		n1 = n;
-	}
 
 	lenght--;
 	do {
-		*(buffer + lenght) = (n1 % 10) + '0';
-		n1 = n1 / 10;
-		lenght--;
+		*(buffer + lenght) = (n1 % 10) + '0', n1 = n1 / 10, lenght--;
 	}
 	while (n1 > 0)
 		;
@@ -93,8 +77,7 @@ int _atoi(char *s)
 
 	for (i = count - size; i < count; i++)
 	{
-		oi = oi + ((*(s + i) - 48) * m);
-		m /= 10;
+		oi = oi + ((*(s + i) - 48) * m), m /= 10;
 	}
 	return (oi * pn);
 }

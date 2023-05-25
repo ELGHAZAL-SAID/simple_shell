@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * free_data - frees data structure
+ * free_data - frees structure
  *
- * @datash: data structure
- * Return: no return
+ * @datash: structure
  */
 void free_data(data_shell *datash)
 {
@@ -30,11 +29,8 @@ void set_data(data_shell *datash, char **av)
 {
 	unsigned int i;
 
-	datash->av = av;
-	datash->input = NULL;
-	datash->args = NULL;
-	datash->status = 0;
-	datash->counter = 1;
+	datash->av = av, datash->input = NULL;
+	datash->args = NULL, datash->status = 0, datash->counter = 1;
 
 	for (i = 0; environ[i]; i++)
 		;
@@ -51,22 +47,19 @@ void set_data(data_shell *datash, char **av)
 }
 
 /**
- * main - Entry point
+ * main - Entry point function
  *
- * @ac: argument count
- * @av: argument vector
+ * @ac: count
+ * @av: vector
  *
- * Return: 0 on success.
+ * Return: 0 if success.
  */
 int main(int ac, char **av)
 {
 	data_shell datash;
 	(void) ac;
-
-	signal(SIGINT, _get_sig_int_);
-	set_data(&datash, av);
-	sh_lp(&datash);
-	free_data(&datash);
+	signal(SIGINT, _get_sig_int_), set_data(&datash, av);
+	sh_lp(&datash), free_data(&datash);
 	if (datash.status < 0)
 		return (255);
 	return (datash.status);
