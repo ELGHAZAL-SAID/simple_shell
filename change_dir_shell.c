@@ -22,23 +22,23 @@ int cd_shell(data_shell *datash)
 
 	if (dir == NULL || !ishome || !ishome2 || !isddash)
 	{
-		cd_to_home(datash);
+		change_dir_to_home(datash);
 		return (1);
 	}
 
 	if (_strcmp("-", dir) == 0)
 	{
-		cd_previous(datash);
+		change_dir_previous(datash);
 		return (1);
 	}
 
 	if (_strcmp(".", dir) == 0 || _strcmp("..", dir) == 0)
 	{
-		cd_dot(datash);
+		change_dir_dot(datash);
 		return (1);
 	}
 
-	cd_to(datash);
+	change_dir_to(datash);
 
 	return (1);
 }

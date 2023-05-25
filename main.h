@@ -176,10 +176,10 @@ int _setenv(data_shell *datash);
 int _unsetenv(data_shell *datash);
 
 /* cd.c */
-void cd_dot(data_shell *datash);
-void cd_to(data_shell *datash);
-void cd_previous(data_shell *datash);
-void cd_to_home(data_shell *datash);
+void change_dir_dot(data_shell *datash);
+void change_dir_to(data_shell *datash);
+void change_dir_previous(data_shell *datash);
+void change_dir_to_home(data_shell *datash);
 
 /* cd_shell.c */
 int cd_shell(data_shell *datash);
