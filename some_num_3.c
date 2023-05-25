@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * ajigad - Help information for the builtin env
- * Return: no return
+ * ajigad - Help info for the builtin environment
+ * Return: no
  */
 void ajigad(void)
 {
 	char *help = "env: env [option] [name=value] [command [args]]\n\t";
 
 	write(STDOUT_FILENO, help, _strlen(help));
-	help = "Print the enviroment of the shell.\n";
+	help = "Print the environment of the shell.\n";
 	write(STDOUT_FILENO, help, _strlen(help));
 
 }
 /**
- * ajigad_a - Help information for the builtin setenv
- * Return: no return
+ * ajigad_a - Help info for the builtin set environment
+ * Return: no
  */
 void ajigad_a(void)
 {
@@ -29,7 +29,7 @@ void ajigad_a(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 /**
- * ajigad_b - Help information for the builtin unsetenv
+ * ajigad_b - Help info for the unsetenv
  * Return: no return
  */
 void ajigad_b(void)
@@ -43,8 +43,8 @@ void ajigad_b(void)
 
 
 /**
- * ajigad_c - Entry point for help information for the help builtin
- * Return: no return
+ * ajigad_c - Entry point for help info
+ * Return: no
  */
 void ajigad_c(void)
 {
@@ -65,8 +65,8 @@ void ajigad_c(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 /**
- * ajigad_d - Help information fot the builint exit
- * Return: no return
+ * ajigad_d - Help info for the builtin exit
+ * Return: no
  */
 void ajigad_d(void)
 {
@@ -75,6 +75,6 @@ void ajigad_d(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 	help = "Exits the shell with a status of N. If N is ommited, the exit";
 	write(STDOUT_FILENO, help, _strlen(help));
-	help = "statusis that of the last command executed\n";
+	help = "status is that of the last command executed\n";
 	write(STDOUT_FILENO, help, _strlen(help));
 }
