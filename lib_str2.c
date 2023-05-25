@@ -77,7 +77,7 @@ char *_strtok(char str[], const char *delim)
 	{
 		if (compare_c(str, delim))
 			return (NULL);
-		splitted = str; 
+		splitted = str;
 		i = _strlen(str);
 		str_end = &str[i];
 	}
