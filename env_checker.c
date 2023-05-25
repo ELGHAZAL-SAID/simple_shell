@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _handle_env - checks if the typed variable is an env variable
+ * _handle_env - handle env.
  *
- * @h: head of linked list
- * @in: input string
- * @data: data structure
- * Return: no return
+ * @h: head node.
+ * @in: string
+ * @data: data
+ * Return: nothing
  */
 void _handle_env(r_var **h, char *in, data_shell *data)
 {
@@ -42,13 +42,13 @@ void _handle_env(r_var **h, char *in, data_shell *data)
 }
 
 /**
- * _handle_vars - check if the typed variable is $$ or $?
+ * _handle_vars - handle variables.
  *
- * @h: head of the linked list
- * @in: input string
- * @st: last status of the Shell
- * @data: data structure
- * Return: no return
+ * @h: head node.
+ * @in: string
+ * @st: last status shell
+ * @data: data
+ * Return: nothing
  */
 int _handle_vars(r_var **h, char *in, char *st, data_shell *data)
 {
@@ -84,13 +84,13 @@ int _handle_vars(r_var **h, char *in, char *st, data_shell *data)
 }
 
 /**
- * rp_inp - replaces string into variables
+ * rp_inp - replace str to var.
  *
- * @head: head of the linked list
- * @input: input string
- * @new_input: new input string (replaced)
- * @nlen: new length
- * Return: replaced string
+ * @head: head node
+ * @input: string
+ * @new_input: new string.
+ * @nlen: new len
+ * Return: new string.
  */
 char *rp_inp(r_var **head, char *input, char *new_input, int nlen)
 {
@@ -136,11 +136,11 @@ char *rp_inp(r_var **head, char *input, char *new_input, int nlen)
 }
 
 /**
- * repeat_var - calls functions to replace string into vars
+ * repeat_var - replace a var.
  *
- * @input: input string
- * @datash: data structure
- * Return: replaced string
+ * @input: string
+ * @datash: data
+ * Return: new string.
  */
 char *repeat_var(char *input, data_shell *datash)
 {

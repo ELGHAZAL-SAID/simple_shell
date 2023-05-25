@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * change_dir_to_shell - changes current directory
+ * change_dir_to_shell - change the curr working dir.
  *
- * @datash: data relevant
- * Return: 1 on success
+ * @datash: data.
+ * Return: always 1.
  */
 int change_dir_to_shell(data_shell *datash)
 {

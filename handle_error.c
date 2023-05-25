@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * char_rep - counts the repetitions of a char
+ * char_rep - num of the chars.
  *
- * @input: input string
+ * @input: string
  * @i: index
- * Return: repetitions
+ * Return: repet.
  */
 int char_rep(char *input, int i)
 {
@@ -16,13 +16,12 @@ int char_rep(char *input, int i)
 }
 
 /**
- * err_s_o - finds syntax errors
+ * err_s_o - find styx err.
  *
- * @input: input string
- * @i: index
- * @last: last char read
- * Return: index of error. 0 when there are no
- * errors
+ * @input: string
+ * @i: idx
+ * @last: last char.
+ * Return: index or 0.
  */
 int err_s_o(char *input, int i, char last)
 {
@@ -69,11 +68,11 @@ int err_s_o(char *input, int i, char last)
 }
 
 /**
- * char_ft - finds index of the first char
+ * char_ft - find idx of the first char.
  *
- * @input: input string
- * @i: index
- * Return: 1 if there is an error. 0 in other case.
+ * @input: string
+ * @i: idx
+ * Return: 1 or 0.
  */
 int char_ft(char *input, int *i)
 {
@@ -93,13 +92,13 @@ int char_ft(char *input, int *i)
 }
 
 /**
- * p_s_err - prints when a syntax error is found
+ * p_s_err - write if err occurrs.
  *
- * @datash: data structure
- * @input: input string
- * @i: index of the error
- * @bool: to control msg error
- * Return: no return
+ * @datash: data
+ * @input: string
+ * @i: idx error
+ * @bool: control error
+ * Return: nothing.
  */
 void p_s_err(data_shell *datash, char *input, int i, int bool)
 {
@@ -146,12 +145,11 @@ void p_s_err(data_shell *datash, char *input, int i, int bool)
 }
 
 /**
- * handle_s_err - intermediate function to
- * find and print a syntax error
+ * handle_s_err - find and print a syntax error
  *
- * @datash: data structure
- * @input: input string
- * Return: 1 if there is an error. 0 in other case
+ * @datash: data.
+ * @input: .string
+ * Return: 1 or 0.
  */
 int handle_s_err(data_shell *datash, char *input)
 {

@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * cmp_env_name - compares env variables names
- * with the name passed.
- * @nenv: name of the environment variable
- * @name: name passed
+ * cmp_env_name - compares env var names.
+ * @nenv: the environment var.
+ * @name: name.
  *
- * Return: 0 if are not equal. Another value if they are.
+ * Return: 0 and 1.
  */
 int cmp_env_name(const char *nenv, const char *name)
 {
@@ -24,26 +23,21 @@ int cmp_env_name(const char *nenv, const char *name)
 }
 
 /**
- * _get_env_ - get an environment variable
- * @name: name of the environment variable
- * @_environ: environment variable
+ * _get_env_ - get an env
+ * @name: env var
+ * @_environ: env var
  *
- * Return: value of the environment variable if is found.
- * In other case, returns NULL.
+ * Return: value of the env var.
  */
 char *_get_env_(const char *name, char **_environ)
 {
 	char *ptr_env;
 	int i, mov;
 
-	/* Initialize ptr_env value */
 	ptr_env = NULL;
 	mov = 0;
-	/* Compare all environment variables */
-	/* environ is declared in the header file */
 	for (i = 0; _environ[i]; i++)
 	{
-		/* If name and env are equal */
 		mov = cmp_env_name(_environ[i], name);
 		if (mov)
 		{
@@ -56,10 +50,10 @@ char *_get_env_(const char *name, char **_environ)
 }
 
 /**
- * _env - prints the evironment variables
+ * _env - write the env var
  *
- * @datash: data relevant.
- * Return: 1 on success.
+ * @datash: data.
+ * Return: always 1.
  */
 int _env(data_shell *datash)
 {

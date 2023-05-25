@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * change_dir_dot - changes to the parent directory
+ * change_dir_dot - change the dir parent.
  *
- * @datash: data relevant (environ)
+ * @datash: data env.
  *
- * Return: no return
+ * Return: nothing.
  */
 void change_dir_dot(data_shell *datash)
 {
@@ -52,11 +52,11 @@ void change_dir_dot(data_shell *datash)
 }
 
 /**
- * change_dir_to - changes to a directory given
+ * change_dir_to - change the des to the src.
  * by the user
  *
- * @datash: data relevant (directories)
- * Return: no return
+ * @datash: data direct.
+ * Return: nothing.
  */
 void change_dir_to(data_shell *datash)
 {
@@ -87,10 +87,10 @@ void change_dir_to(data_shell *datash)
 }
 
 /**
- * change_dir_previous - changes to the previous directory
+ * change_dir_previous - change to prev dir.
  *
- * @datash: data relevant (environ)
- * Return: no return
+ * @datash: data env.
+ * Return: nothing.
  */
 void change_dir_previous(data_shell *datash)
 {
@@ -129,10 +129,10 @@ void change_dir_previous(data_shell *datash)
 }
 
 /**
- * change_dir_to_home - changes to home directory
+ * change_dir_to_home - change to home dir
  *
- * @datash: data relevant (environ)
- * Return: no return
+ * @datash: data env
+ * Return: nothing.
  */
 void change_dir_to_home(data_shell *datash)
 {
