@@ -199,14 +199,14 @@ int _atoi(char *s);
 char *_str_cat_cd_(data_shell *, char *, char *, char *);
 char *err_getter_cd(data_shell *datash);
 char *err_n_f(data_shell *datash);
-char *error_exit_shell(data_shell *datash);
+char *err_quit_sh(data_shell *datash);
 
 /* aux_error2.c */
-char *error_get_alias(char **args);
-char *error_env(data_shell *datash);
-char *error_syntax(char **args);
-char *error_permission(char **args);
-char *error_path_126(data_shell *datash);
+char *err_alias_getter(char **args);
+char *_err_env_(data_shell *datash);
+char *_err_syx_(char **args);
+char *_err_per_(char **args);
+char *_err_p_127(data_shell *datash);
 
 
 /* get_error.c */

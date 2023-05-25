@@ -110,12 +110,12 @@ char *err_n_f(data_shell *datash)
 }
 
 /**
- * error_exit_shell - generic error message for exit in get_exit
+ * err_quit_sh - generic error message for exit in get_exit
  * @datash: data relevant (counter, arguments)
  *
  * Return: Error message
  */
-char *error_exit_shell(data_shell *datash)
+char *err_quit_sh(data_shell *datash)
 {
 	int length;
 	char *error;
