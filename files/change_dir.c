@@ -36,13 +36,13 @@ char *strcat_rmf(char *d, char *s)
 }
 
 /**
- * set_env - concatenating string and set it.
+ * _set_env_ - concatenating string and set it.
  * @e: var environ.
  * @v_name: var environ name.
  * @d: the path.
  * Return: always 0.
  **/
-int set_env(link_t **e, char *v_name, char *d)
+int _set_env_(link_t **e, char *v_name, char *d)
 {
 	int index = 0, i = 0;
 	char *str;
@@ -75,13 +75,13 @@ void cd_home(link_t *e, char *cur)
 	char *hm = NULL;
 
 	hm = env_getter("HOME", e);
-	set_env(&e, "OLDPWD", cur);
+	_set_env_(&e, "OLDPWD", cur);
 	free(cur);
 	if (access(hm, F_OK) == 0)
 		chdir(hm);
 	cur = NULL;
 	cur = getcwd(cur, 0);
-	set_env(&e, "PWD", cur);
+	_set_env_(&e, "PWD", cur);
 	free(cur);
 	free(hm);
 }
@@ -101,12 +101,12 @@ int exec_cd(link_t *e, char *cur, char *dir, char *str, int num)
 
 	if (access(dir, F_OK) == 0)
 	{
-		set_env(&e, "OLDPWD", cur);
+		_set_env_(&e, "OLDPWD", cur);
 		free(cur);
 		chdir(dir);
 		cur = NULL;
 		cur = getcwd(cur, 0);
-		set_env(&e, "PWD", cur);
+		_set_env_(&e, "PWD", cur);
 		free(cur);
 	}
 	else

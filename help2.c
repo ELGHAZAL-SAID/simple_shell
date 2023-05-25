@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * copy_info - copies info to create
+ * _copy_info_ - copies info to create
  * a new env or alias
  * @name: name (env or alias)
  * @value: value (env or alias)
  *
  * Return: new env or alias.
  */
-char *copy_info(char *name, char *value)
+char *_copy_info_(char *name, char *value)
 {
 	char *new;
 	int len_name, len_value, len;
@@ -26,14 +26,14 @@ char *copy_info(char *name, char *value)
 }
 
 /**
- * set_env - sets an environment variable
+ * _set_env_ - sets an environment variable
  *
  * @name: name of the environment variable
  * @value: value of the environment variable
  * @datash: data structure (environ)
  * Return: no return
  */
-void set_env(char *name, char *value, data_shell *datash)
+void _set_env_(char *name, char *value, data_shell *datash)
 {
 	int i;
 	char *var_env, *name_env;
@@ -45,7 +45,7 @@ void set_env(char *name, char *value, data_shell *datash)
 		if (_strcmp(name_env, name) == 0)
 		{
 			free(datash->_environ[i]);
-			datash->_environ[i] = copy_info(name_env, value);
+			datash->_environ[i] = _copy_info_(name_env, value);
 			free(var_env);
 			return;
 		}
@@ -53,7 +53,7 @@ void set_env(char *name, char *value, data_shell *datash)
 	}
 
 	datash->_environ = _reallocdp(datash->_environ, i, sizeof(char *) * (i + 2));
-	datash->_environ[i] = copy_info(name, value);
+	datash->_environ[i] = _copy_info_(name, value);
 	datash->_environ[i + 1] = NULL;
 }
 
@@ -73,7 +73,7 @@ int _setenv(data_shell *datash)
 		return (1);
 	}
 
-	set_env(datash->args[1], datash->args[2], datash);
+	_set_env_(datash->args[1], datash->args[2], datash);
 
 	return (1);
 }
