@@ -213,14 +213,14 @@ char *_err_p_127(data_shell *datash);
 int get_error(data_shell *datash, int eval);
 
 /* get_sigint.c */
-void get_sigint(int sig);
+void _get_sig_int_(int sig);
 
 /* aux_help.c */
-void aux_help_env(void);
-void aux_help_setenv(void);
-void aux_help_unsetenv(void);
-void aux_help_general(void);
-void aux_help_exit(void);
+void ajigad(void);
+void ajigad_a(void);
+void ajigad_b(void);
+void ajigad_c(void);
+void ajigad_d(void);
 
 /* aux_help2.c */
 void aux_help(void);
