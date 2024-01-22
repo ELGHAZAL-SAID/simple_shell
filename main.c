@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * free_data - frees structure
+ * free_data - frees structure bihi
  *
  * @datash: structure
  */
